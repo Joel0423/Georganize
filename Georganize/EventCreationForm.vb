@@ -1,11 +1,13 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Text.RegularExpressions
+Imports System.Windows.Forms.Design
 
 Public Class EventCreationForm
     Private Sqlcmd As New SqlCommand
     Dim random As New Random()
 
     Private Sub EventCreationForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label12.Visible = False
         Sqlcmd.Connection = Sqlcon
         Populate()
         ' Events can only be created from today to 5 years from now
@@ -17,7 +19,7 @@ Public Class EventCreationForm
         EventVisibilityComboBox.SelectedIndex = 0
     End Sub
 
-    Private Sub EventCreationForm_CLose() Handles Me.Closed
+    Private Sub EventCreationForm_CLose() Handles MyBase.Closed
         HomeForm.Show()
     End Sub
 
@@ -30,6 +32,7 @@ Public Class EventCreationForm
         While Sqldr.Read
 
             VenueComboBox.Items.Add(Sqldr.GetValue(0))
+
             VenueAddressList.Add(Sqldr.GetValue(1))
         End While
         ' Close DataReader asap
@@ -39,6 +42,8 @@ Public Class EventCreationForm
 
     Private Sub BookVenueCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles BookVenueCheckBox.CheckedChanged
         If BookVenueCheckBox.Checked Then
+            ListView1.Visible = True
+            Label12.Visible = True
             EventModeBox.SelectedIndex = 0
             EventModeBox.Enabled = False
             VenueComboBox.Visible = True
@@ -46,6 +51,9 @@ Public Class EventCreationForm
             EventAddressBox.Text = ""
             EventAddressBox.Enabled = False
         Else
+            ListView1.Visible = False
+            Label12.Visible = False
+            ListView1.Items.Clear()
             VenueComboBox.SelectedIndex = -1
             EventModeBox.Enabled = True
             VenueComboBox.Visible = False
@@ -138,16 +146,27 @@ Public Class EventCreationForm
         End If
 
         If ErrorProvider1.GetError(EventNameBox) = Nothing And ErrorProvider1.GetError(EventAddressBox) = Nothing And ErrorProvider1.GetError(EventModeBox) = Nothing And ErrorProvider1.GetError(VenueComboBox) = Nothing And ErrorProvider1.GetError(EventEndTimePicker) = Nothing And ErrorProvider1.GetError(AgeBox) = Nothing Then
-            If BookVenueCheckBox.Checked Then
-                CheckDatabase()
+            Dim Temp As String
+            Sqlcmd.Parameters.Clear()
+            Sqlcmd.Parameters.AddWithValue("ename", EventNameBox.Text)
+            Sqlcmd.CommandText = "select name from events where name=@ename"
+            Temp = Sqlcmd.ExecuteScalar
+            If Temp Is Nothing Then
+                If BookVenueCheckBox.Checked Then
+                    CheckDatabase()
+                Else
+                    SubmitDetails()
+                End If
             Else
-                SubmitDetails()
+                MessageBox.Show("The name " & Temp.TrimEnd & " is already taken, enter another name", "Form not filled correctly", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End If
+
         Else
             MessageBox.Show("Enter all the required details correctly", "Form not filled correctly", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
         Dim log As String
         log = LoggedInUser.ToString() & " created a new event."
+        Sqlcmd.Parameters.Clear()
         Sqlcmd.Parameters.AddWithValue("log", log)
         Sqlcmd.CommandText = "insert into logs (logtext) values (@log);"
         Sqlcmd.ExecuteNonQuery()
@@ -217,10 +236,14 @@ Public Class EventCreationForm
         Sqlcmd.Parameters.Clear()
 
         If BookVenueCheckBox.Checked And VenueComboBox.SelectedIndex <> -1 Then
+            ' can select wrong venue if two venue have same name
+            Sqlcmd.Parameters.AddWithValue("SelVenP", VenueComboBox.SelectedItem.ToString)
+            Sqlcmd.CommandText = "select venueid from venues where name =@SelVenP"
+            Dim tempvid As Integer = Sqlcmd.ExecuteScalar
             Sqlcmd.Parameters.AddWithValue("TempidP", tempid)
-            Sqlcmd.Parameters.AddWithValue("SelVenP", VenueComboBox.SelectedIndex)
+            Sqlcmd.Parameters.AddWithValue("vid", tempvid)
 
-            Sqlcmd.CommandText = "insert into [venue-events] values (@TempidP,@SelVenP)"
+            Sqlcmd.CommandText = "insert into [venue-events] values (@TempidP,@vid)"
             Sqlcmd.ExecuteNonQuery()
             Sqlcmd.Parameters.Clear()
         Else
@@ -241,7 +264,6 @@ Public Class EventCreationForm
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles AgeBox.TextChanged, AgeBox.VisibleChanged
         If AgeBox.Visible Then
-            AgeBox.Text = "18"
             If AgeBox.Text.Trim = Nothing Then
                 ErrorProvider1.SetError(AgeBox, "Enter the age requirement")
             ElseIf Regex.IsMatch(AgeBox.Text, "[^0-9]") Then
@@ -257,8 +279,8 @@ Public Class EventCreationForm
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles AgeCheckBox.CheckedChanged
         If AgeCheckBox.Checked Then
-            AgeBox.Text = "18"
             AgeBox.Visible = True
+            AgeBox.Text = "18"
         Else
             AgeBox.Visible = False
             AgeBox.Text = "0"
@@ -273,5 +295,24 @@ Public Class EventCreationForm
             SecretCode.Visible = True
             SecretCode.Text = random.Next(1000, 9999) ' can only be 4 digits
         End If
+    End Sub
+
+    Private Sub DisplayTimings_Click(sender As Object, e As EventArgs) Handles VenueComboBox.SelectedIndexChanged, EventDatePicker.ValueChanged
+        If VenueComboBox.SelectedIndex >= 0 Then
+            ListView1.Items.Clear()
+            Dim Sqldr As SqlDataReader
+            Sqlcmd.Parameters.Clear()
+            Sqlcmd.Parameters.AddWithValue("venueid", VenueComboBox.SelectedIndex)
+            Sqlcmd.Parameters.AddWithValue("date", EventDatePicker.Value.Date)
+            Sqlcmd.CommandText = "select distinct [start-time], [end-time] from events,venues,[venue-events] where events.eventid = [venue-events].eventid and [venue-events].venueid =@venueid  and date = @date"
+            Sqldr = Sqlcmd.ExecuteReader
+            Sqlcmd.Parameters.Clear()
+
+            While Sqldr.Read
+                ListView1.Items.Add(Sqldr.Item(0).ToString).SubItems.Add(Sqldr.Item(1).ToString)
+            End While
+            Sqldr.Close()
+        End If
+
     End Sub
 End Class

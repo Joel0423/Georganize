@@ -5,18 +5,28 @@ Public Module GeoLoad
     Public Sqlcon As New SqlConnection
     Public LoggedInUser = ""
     Public SelectedPublicEventID = ""
+    Public LoggedInUserDOB As DateTime
+    Public LoggedInUserAge = 0
     Public VenueAddressList As New List(Of String)
-    Public ProfilePicDirectory As String = "C:\Users\Admin\Downloads\Georganize-20230215T143004Z-001-20230227T033452Z-001\Georganize-20230215T143004Z-001\GeoProfilePics"
+    Public ProfilePicDirectory As String = "C:\Users\joela\Desktop\Georganize-20230215T143004Z-001\GeoProfilePics"
     Public InitialDirectoryString As String = "C:\Users\Public\Pictures"
 
     Public Sub GeoOpen()
-        Sqlcon.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Admin\Downloads\Georganize-20230215T143004Z-001-20230303T034701Z-001\Georganize-20230215T143004Z-001\Georganize\Georganize\GeoDatabase.mdf;Integrated Security=True"
+        Sqlcon.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\joela\Desktop\Georganize-20230215T143004Z-001\Georganize\Georganize\GeoDatabase.mdf;Integrated Security=True"
         Sqlcon.Open()
     End Sub
 
     Public Sub GeoClose()
         Sqlcon.Close()
         LoginForm.Close()
+    End Sub
+
+    Public Sub FindAge()
+        LoggedInUserAge = DateTime.Today.Year - LoggedInUserDOB.Year
+        ' for leap year?
+        If LoggedInUserDOB.Date > DateTime.Today.AddYears(-LoggedInUserAge) Then
+            LoggedInUserAge -= 1
+        End If
     End Sub
 
 End Module

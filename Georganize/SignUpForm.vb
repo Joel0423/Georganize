@@ -178,34 +178,34 @@ Public Class SignUpForm
     End Function
 
     Private Function CheckDatabase() As Boolean
-        Dim Sqldr As SqlDataReader
         ' used to check if user has entered an already existing username, email or phone number
         Dim bool As Boolean = True
-        Sqlcmd.CommandText = "select username,phoneno,email from users"
-        Sqldr = Sqlcmd.ExecuteReader
+        Sqlcmd.Parameters.Clear()
+        Sqlcmd.Parameters.AddWithValue("name", UsernameTextBox.Text)
+        Sqlcmd.Parameters.AddWithValue("email", EmailBox.Text)
+        Sqlcmd.Parameters.AddWithValue("phone", PhoneBox.Text)
 
-        Do While Sqldr.Read
-            Dim temp As String
-            temp = Sqldr.GetString("username") 'Name of column in users table
-
-            If temp = UsernameTextBox.Text Then
+        Sqlcmd.CommandText = "select count(*) from users where users.username = @name"
+        If Sqlcmd.ExecuteScalar <> Nothing Then
+            bool = False
+        Else
+            Sqlcmd.CommandText = "select count(*) from admin where admin.username = @name"
+            If Sqlcmd.ExecuteScalar <> Nothing Then
                 bool = False
-                ErrorProvider1.SetError(UsernameTextBox, "Username is already taken")
             End If
 
-            temp = Sqldr.GetValue("phoneno") 'Name of column in users table
-            If temp = Val(PhoneBox.Text) Then
-                bool = False
-                ErrorProvider1.SetError(PhoneBox, "Phone number is already taken")
-            End If
-            temp = Sqldr.GetString("email") 'Name of column in users table
-            If temp = EmailBox.Text Then
-                bool = False
-                ErrorProvider1.SetError(EmailBox, "Email-ID is already taken")
-            End If
-        Loop
+        End If
 
-        Sqldr.Close()
+        Sqlcmd.CommandText = "select count(*) from users where phoneno = @phone"
+        If Sqlcmd.ExecuteScalar <> Nothing Then
+            bool = False
+        End If
+
+        Sqlcmd.CommandText = "select count(*) from users where email = @email"
+        If Sqlcmd.ExecuteScalar <> Nothing Then
+            bool = False
+        End If
+        Sqlcmd.Parameters.Clear()
         Return bool
     End Function
 

@@ -22,7 +22,6 @@ Partial Class HomeForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        components = New ComponentModel.Container()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(HomeForm))
         CreateEventButton = New Button()
         ProfileButton = New Button()
@@ -33,11 +32,12 @@ Partial Class HomeForm
         Label1 = New Label()
         Label2 = New Label()
         CodeBox = New TextBox()
-        ContextMenuStrip1 = New ContextMenuStrip(components)
         Button1 = New Button()
         Label3 = New Label()
         ManageEventsButton = New Button()
         PublicEventsList = New ListView()
+        EventName = New ColumnHeader()
+        EventDate = New ColumnHeader()
         InviteButton = New Button()
         InvitationsBox = New CheckedListBox()
         SuspendLayout()
@@ -95,7 +95,7 @@ Partial Class HomeForm
         Button2.BackColor = Color.Transparent
         Button2.FlatStyle = FlatStyle.Flat
         Button2.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        Button2.Location = New Point(96, 335)
+        Button2.Location = New Point(46, 335)
         Button2.Name = "Button2"
         Button2.Size = New Size(86, 37)
         Button2.TabIndex = 6
@@ -107,7 +107,7 @@ Partial Class HomeForm
         Button3.BackColor = Color.Transparent
         Button3.FlatStyle = FlatStyle.Flat
         Button3.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        Button3.Location = New Point(188, 335)
+        Button3.Location = New Point(145, 335)
         Button3.Name = "Button3"
         Button3.Size = New Size(87, 37)
         Button3.TabIndex = 7
@@ -135,7 +135,7 @@ Partial Class HomeForm
         Label2.FlatStyle = FlatStyle.Popup
         Label2.Font = New Font("SimSun-ExtB", 18F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.ForeColor = Color.Black
-        Label2.Location = New Point(157, 188)
+        Label2.Location = New Point(122, 188)
         Label2.Name = "Label2"
         Label2.Size = New Size(155, 26)
         Label2.TabIndex = 9
@@ -151,11 +151,6 @@ Partial Class HomeForm
         CodeBox.Size = New Size(178, 29)
         CodeBox.TabIndex = 11
         CodeBox.TextAlign = HorizontalAlignment.Center
-        ' 
-        ' ContextMenuStrip1
-        ' 
-        ContextMenuStrip1.Name = "ContextMenuStrip1"
-        ContextMenuStrip1.Size = New Size(61, 4)
         ' 
         ' Button1
         ' 
@@ -177,7 +172,7 @@ Partial Class HomeForm
         Label3.FlatStyle = FlatStyle.Popup
         Label3.Font = New Font("SimSun-ExtB", 18F, FontStyle.Bold, GraphicsUnit.Point)
         Label3.ForeColor = Color.Black
-        Label3.Location = New Point(494, 188)
+        Label3.Location = New Point(509, 188)
         Label3.Name = "Label3"
         Label3.Size = New Size(181, 26)
         Label3.TabIndex = 16
@@ -197,21 +192,33 @@ Partial Class HomeForm
         ' PublicEventsList
         ' 
         PublicEventsList.Alignment = ListViewAlignment.Left
-        PublicEventsList.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        PublicEventsList.Location = New Point(463, 217)
+        PublicEventsList.Columns.AddRange(New ColumnHeader() {EventName, EventDate})
+        PublicEventsList.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        PublicEventsList.HeaderStyle = ColumnHeaderStyle.Nonclickable
+        PublicEventsList.Location = New Point(442, 217)
         PublicEventsList.MultiSelect = False
         PublicEventsList.Name = "PublicEventsList"
-        PublicEventsList.Size = New Size(280, 130)
+        PublicEventsList.Size = New Size(313, 154)
         PublicEventsList.TabIndex = 13
         PublicEventsList.UseCompatibleStateImageBehavior = False
-        PublicEventsList.View = View.List
+        PublicEventsList.View = View.Details
+        ' 
+        ' EventName
+        ' 
+        EventName.Text = "Name"
+        EventName.Width = 195
+        ' 
+        ' EventDate
+        ' 
+        EventDate.Text = "Date"
+        EventDate.Width = 100
         ' 
         ' InviteButton
         ' 
         InviteButton.BackColor = Color.Transparent
         InviteButton.FlatStyle = FlatStyle.Flat
         InviteButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        InviteButton.Location = New Point(281, 334)
+        InviteButton.Location = New Point(251, 335)
         InviteButton.Name = "InviteButton"
         InviteButton.Size = New Size(95, 37)
         InviteButton.TabIndex = 18
@@ -220,10 +227,11 @@ Partial Class HomeForm
         ' 
         ' InvitationsBox
         ' 
+        InvitationsBox.CheckOnClick = True
         InvitationsBox.FormattingEnabled = True
-        InvitationsBox.Location = New Point(96, 217)
+        InvitationsBox.Location = New Point(46, 217)
         InvitationsBox.Name = "InvitationsBox"
-        InvitationsBox.Size = New Size(280, 112)
+        InvitationsBox.Size = New Size(300, 112)
         InvitationsBox.TabIndex = 19
         ' 
         ' HomeForm
@@ -264,11 +272,12 @@ Partial Class HomeForm
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents CodeBox As TextBox
-    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents Button1 As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents ManageEventsButton As Button
     Friend WithEvents PublicEventsList As ListView
     Friend WithEvents InviteButton As Button
     Friend WithEvents InvitationsBox As CheckedListBox
+    Friend WithEvents EventName As ColumnHeader
+    Friend WithEvents EventDate As ColumnHeader
 End Class

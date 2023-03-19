@@ -23,9 +23,13 @@ Partial Class EnrolledEventsForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Label1 = New Label()
-        EnrolledEventsList = New ListBox()
         DeleteButton = New Button()
         Button1 = New Button()
+        EnrolledEventsList = New ListView()
+        EventName = New ColumnHeader()
+        EventDate = New ColumnHeader()
+        StartTime = New ColumnHeader()
+        EndTime = New ColumnHeader()
         SuspendLayout()
         ' 
         ' Label1
@@ -41,16 +45,6 @@ Partial Class EnrolledEventsForm
         Label1.Size = New Size(397, 50)
         Label1.TabIndex = 14
         Label1.Text = "Enrolled Events"' 
-        ' EnrolledEventsList
-        ' 
-        EnrolledEventsList.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        EnrolledEventsList.FormattingEnabled = True
-        EnrolledEventsList.ItemHeight = 21
-        EnrolledEventsList.Location = New Point(207, 139)
-        EnrolledEventsList.Name = "EnrolledEventsList"
-        EnrolledEventsList.Size = New Size(397, 151)
-        EnrolledEventsList.TabIndex = 15
-        ' 
         ' DeleteButton
         ' 
         DeleteButton.BackColor = Color.Transparent
@@ -60,7 +54,7 @@ Partial Class EnrolledEventsForm
         DeleteButton.Name = "DeleteButton"
         DeleteButton.Size = New Size(133, 37)
         DeleteButton.TabIndex = 16
-        DeleteButton.Text = "Delete"
+        DeleteButton.Text = "Un-enroll"
         DeleteButton.UseVisualStyleBackColor = False
         ' 
         ' Button1
@@ -75,6 +69,38 @@ Partial Class EnrolledEventsForm
         Button1.Text = "Visit"
         Button1.UseVisualStyleBackColor = False
         ' 
+        ' EnrolledEventsList
+        ' 
+        EnrolledEventsList.Columns.AddRange(New ColumnHeader() {EventName, EventDate, StartTime, EndTime})
+        EnrolledEventsList.FullRowSelect = True
+        EnrolledEventsList.Location = New Point(207, 140)
+        EnrolledEventsList.MultiSelect = False
+        EnrolledEventsList.Name = "EnrolledEventsList"
+        EnrolledEventsList.Size = New Size(400, 150)
+        EnrolledEventsList.TabIndex = 18
+        EnrolledEventsList.UseCompatibleStateImageBehavior = False
+        EnrolledEventsList.View = View.Details
+        ' 
+        ' EventName
+        ' 
+        EventName.Text = "Name"
+        EventName.Width = 120
+        ' 
+        ' EventDate
+        ' 
+        EventDate.Text = "Date"
+        EventDate.Width = 120
+        ' 
+        ' StartTime
+        ' 
+        StartTime.Text = "Start Time"
+        StartTime.Width = 90
+        ' 
+        ' EndTime
+        ' 
+        EndTime.Text = "End Time"
+        EndTime.Width = 90
+        ' 
         ' EnrolledEventsForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -82,9 +108,9 @@ Partial Class EnrolledEventsForm
         BackgroundImage = My.Resources.Resources.light
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(800, 450)
+        Controls.Add(EnrolledEventsList)
         Controls.Add(Button1)
         Controls.Add(DeleteButton)
-        Controls.Add(EnrolledEventsList)
         Controls.Add(Label1)
         Name = "EnrolledEventsForm"
         StartPosition = FormStartPosition.CenterScreen
@@ -94,7 +120,11 @@ Partial Class EnrolledEventsForm
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents EnrolledEventsList As ListBox
     Friend WithEvents DeleteButton As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents EnrolledEventsList As ListView
+    Friend WithEvents EventName As ColumnHeader
+    Friend WithEvents EventDate As ColumnHeader
+    Friend WithEvents StartTime As ColumnHeader
+    Friend WithEvents EndTime As ColumnHeader
 End Class

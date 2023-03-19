@@ -38,9 +38,9 @@ Partial Class ManageEvents
         Label1.ForeColor = Color.Black
         Label1.Location = New Point(220, 9)
         Label1.Name = "Label1"
-        Label1.Size = New Size(347, 50)
+        Label1.Size = New Size(472, 50)
         Label1.TabIndex = 7
-        Label1.Text = "Manage Events"' 
+        Label1.Text = "Manage Your Events"' 
         ' DeleteEventButton
         ' 
         DeleteEventButton.BackColor = Color.Transparent
@@ -89,7 +89,7 @@ Partial Class ManageEvents
         Controls.Add(Label1)
         Name = "ManageEvents"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "ManageEvents"
+        Text = "Manage Events"
         ResumeLayout(False)
         PerformLayout()
     End Sub

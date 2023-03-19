@@ -28,12 +28,17 @@ Partial Class Invitations
         Label2 = New Label()
         InviteButton = New Button()
         SystemUsers = New CheckedListBox()
+        Label4 = New Label()
+        Label5 = New Label()
+        SearchBox = New TextBox()
+        SearchByBox = New ComboBox()
+        SearchButton = New Button()
         SuspendLayout()
         ' 
         ' EnrolledEvents
         ' 
         EnrolledEvents.FormattingEnabled = True
-        EnrolledEvents.Location = New Point(118, 206)
+        EnrolledEvents.Location = New Point(118, 177)
         EnrolledEvents.Name = "EnrolledEvents"
         EnrolledEvents.Size = New Size(240, 23)
         EnrolledEvents.TabIndex = 0
@@ -46,7 +51,7 @@ Partial Class Invitations
         Label3.FlatStyle = FlatStyle.Popup
         Label3.Font = New Font("SimSun-ExtB", 18F, FontStyle.Bold, GraphicsUnit.Point)
         Label3.ForeColor = Color.Black
-        Label3.Location = New Point(118, 177)
+        Label3.Location = New Point(118, 148)
         Label3.Name = "Label3"
         Label3.Size = New Size(77, 26)
         Label3.TabIndex = 17
@@ -91,11 +96,65 @@ Partial Class Invitations
         ' 
         ' SystemUsers
         ' 
+        SystemUsers.CheckOnClick = True
         SystemUsers.FormattingEnabled = True
         SystemUsers.Location = New Point(423, 177)
         SystemUsers.Name = "SystemUsers"
         SystemUsers.Size = New Size(211, 148)
         SystemUsers.TabIndex = 22
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.BackColor = Color.WhiteSmoke
+        Label4.BorderStyle = BorderStyle.FixedSingle
+        Label4.FlatStyle = FlatStyle.Popup
+        Label4.Font = New Font("SimSun-ExtB", 18F, FontStyle.Bold, GraphicsUnit.Point)
+        Label4.ForeColor = Color.Black
+        Label4.Location = New Point(118, 203)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(207, 26)
+        Label4.TabIndex = 23
+        Label4.Text = "Search For User"' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.WhiteSmoke
+        Label5.BorderStyle = BorderStyle.FixedSingle
+        Label5.FlatStyle = FlatStyle.Popup
+        Label5.Font = New Font("SimSun-ExtB", 18F, FontStyle.Bold, GraphicsUnit.Point)
+        Label5.ForeColor = Color.Black
+        Label5.Location = New Point(118, 258)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(142, 26)
+        Label5.TabIndex = 24
+        Label5.Text = "Search By-"' 
+        ' SearchBox
+        ' 
+        SearchBox.Location = New Point(118, 232)
+        SearchBox.Name = "SearchBox"
+        SearchBox.Size = New Size(240, 23)
+        SearchBox.TabIndex = 25
+        ' 
+        ' SearchByBox
+        ' 
+        SearchByBox.FormattingEnabled = True
+        SearchByBox.Location = New Point(118, 287)
+        SearchByBox.Name = "SearchByBox"
+        SearchByBox.Size = New Size(240, 23)
+        SearchByBox.TabIndex = 26
+        ' 
+        ' SearchButton
+        ' 
+        SearchButton.BackColor = Color.Transparent
+        SearchButton.FlatStyle = FlatStyle.Flat
+        SearchButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        SearchButton.Location = New Point(118, 331)
+        SearchButton.Name = "SearchButton"
+        SearchButton.Size = New Size(162, 37)
+        SearchButton.TabIndex = 27
+        SearchButton.Text = "Search"
+        SearchButton.UseVisualStyleBackColor = False
         ' 
         ' Invitations
         ' 
@@ -104,6 +163,11 @@ Partial Class Invitations
         BackgroundImage = My.Resources.Resources.light1
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(800, 450)
+        Controls.Add(SearchButton)
+        Controls.Add(SearchByBox)
+        Controls.Add(SearchBox)
+        Controls.Add(Label5)
+        Controls.Add(Label4)
         Controls.Add(SystemUsers)
         Controls.Add(InviteButton)
         Controls.Add(Label2)
@@ -111,6 +175,7 @@ Partial Class Invitations
         Controls.Add(Label3)
         Controls.Add(EnrolledEvents)
         Name = "Invitations"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Invitations"
         ResumeLayout(False)
         PerformLayout()
@@ -122,4 +187,9 @@ Partial Class Invitations
     Friend WithEvents Label2 As Label
     Friend WithEvents InviteButton As Button
     Friend WithEvents SystemUsers As CheckedListBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents SearchBox As TextBox
+    Friend WithEvents SearchByBox As ComboBox
+    Friend WithEvents SearchButton As Button
 End Class

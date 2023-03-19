@@ -49,11 +49,13 @@ Partial Class EventTemplateForm
         EventNameLabel.FlatStyle = FlatStyle.Popup
         EventNameLabel.Font = New Font("SimSun-ExtB", 26.25F, FontStyle.Bold, GraphicsUnit.Point)
         EventNameLabel.ForeColor = Color.Black
-        EventNameLabel.Location = New Point(264, 7)
+        EventNameLabel.Location = New Point(359, 5)
         EventNameLabel.Name = "EventNameLabel"
-        EventNameLabel.Size = New Size(511, 50)
+        EventNameLabel.Size = New Size(251, 50)
         EventNameLabel.TabIndex = 9
-        EventNameLabel.Text = "event name"' 
+        EventNameLabel.Text = "event name"
+        EventNameLabel.TextAlign = ContentAlignment.MiddleCenter
+        ' 
         ' OrganizerNameLabel
         ' 
         OrganizerNameLabel.AutoSize = True
@@ -201,7 +203,7 @@ Partial Class EventTemplateForm
         VisibilityLabel.FlatStyle = FlatStyle.Popup
         VisibilityLabel.Font = New Font("SimSun-ExtB", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
         VisibilityLabel.ForeColor = Color.Black
-        VisibilityLabel.Location = New Point(93, 12)
+        VisibilityLabel.Location = New Point(118, 20)
         VisibilityLabel.Name = "VisibilityLabel"
         VisibilityLabel.Size = New Size(44, 21)
         VisibilityLabel.TabIndex = 23

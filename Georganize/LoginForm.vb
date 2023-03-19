@@ -32,11 +32,11 @@ Public Class LoginForm
         SignUpForm.Show()
     End Sub
 
-    Private Sub CheckDatabase()
-        ' Checks database to see if entered username and password is correct
+    Private Sub CheckAdmin()
+        Sqlcmd.Parameters.Clear()
         Sqlcmd.Parameters.AddWithValue("UserP", UsernameBox.Text)
         Sqlcmd.Parameters.AddWithValue("PassP", PasswordBox.Text)
-        Sqlcmd.CommandText = "SELECT userid,username,password FROM users WHERE username=@UserP AND password=@PassP"
+        Sqlcmd.CommandText = "SELECT adminid,username,password FROM admin WHERE username=@UserP AND password=@PassP"
 
         If Sqlcmd.ExecuteScalar = Nothing Then
             MessageBox.Show("Entered Username or Password is incorrect", "Incorrect Details", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -46,6 +46,33 @@ Public Class LoginForm
             ' stores the currently loggedin users userid as string
             ' LoggedInUser is declared in the module GeoLoad
             LoggedInUser = Sqlcmd.ExecuteScalar.ToString
+            Sqlcmd.Parameters.Clear()
+
+            Me.Hide()
+            AdminHome.Show()
+        End If
+        'allows user to try to enter username/password multiple times
+        Sqlcmd.Parameters.Clear()
+    End Sub
+
+    Private Sub CheckDatabase()
+        ' Checks database to see if entered username and password is correct
+        Sqlcmd.Parameters.AddWithValue("UserP", UsernameBox.Text)
+        Sqlcmd.Parameters.AddWithValue("PassP", PasswordBox.Text)
+        Sqlcmd.CommandText = "SELECT userid,username,password FROM users WHERE username=@UserP AND password=@PassP"
+
+        If Sqlcmd.ExecuteScalar = Nothing Then
+            CheckAdmin()
+
+        Else
+
+            ' stores the currently loggedin users userid as string
+            ' LoggedInUser is declared in the module GeoLoad
+            LoggedInUser = Sqlcmd.ExecuteScalar.ToString
+            Sqlcmd.Parameters.AddWithValue("loggd", LoggedInUser)
+            Sqlcmd.CommandText = "select dob from users where userid=@loggd"
+            LoggedInUserDOB = Sqlcmd.ExecuteScalar
+            FindAge()
             CloseForm()
         End If
         'allows user to try to enter username/password multiple times

@@ -34,6 +34,19 @@ Partial Class AdminHome
         EventUpdate = New Button()
         SystemLogs = New ListBox()
         Label4 = New Label()
+        AllEventButton = New Button()
+        EventLabel = New Label()
+        AddVenueButton = New Button()
+        RemoveVenueButton = New Button()
+        VenueListBox = New ListView()
+        VID = New ColumnHeader()
+        VenueName = New ColumnHeader()
+        VenueAddress = New ColumnHeader()
+        VenueNameBox = New TextBox()
+        VenueAddressBox = New RichTextBox()
+        Label5 = New Label()
+        Label6 = New Label()
+        Label7 = New Label()
         SuspendLayout()
         ' 
         ' Label2
@@ -77,6 +90,7 @@ Partial Class AdminHome
         Label3.Text = "Events"' 
         ' UserList
         ' 
+        UserList.CheckOnClick = True
         UserList.FormattingEnabled = True
         UserList.Location = New Point(51, 162)
         UserList.Name = "UserList"
@@ -85,6 +99,7 @@ Partial Class AdminHome
         ' 
         ' EventList
         ' 
+        EventList.CheckOnClick = True
         EventList.FormattingEnabled = True
         EventList.Location = New Point(424, 162)
         EventList.Name = "EventList"
@@ -173,13 +188,156 @@ Partial Class AdminHome
         Label4.Size = New Size(185, 49)
         Label4.TabIndex = 19
         Label4.Text = "System Logs"' 
+        ' AllEventButton
+        ' 
+        AllEventButton.BackColor = Color.Transparent
+        AllEventButton.FlatStyle = FlatStyle.Flat
+        AllEventButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        AllEventButton.Location = New Point(567, 406)
+        AllEventButton.Name = "AllEventButton"
+        AllEventButton.Size = New Size(157, 37)
+        AllEventButton.TabIndex = 20
+        AllEventButton.Text = "All Events"
+        AllEventButton.UseVisualStyleBackColor = False
+        ' 
+        ' EventLabel
+        ' 
+        EventLabel.AutoSize = True
+        EventLabel.BackColor = Color.Transparent
+        EventLabel.BorderStyle = BorderStyle.Fixed3D
+        EventLabel.FlatStyle = FlatStyle.Popup
+        EventLabel.Font = New Font("Sitka Banner", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point)
+        EventLabel.ForeColor = Color.Black
+        EventLabel.Location = New Point(555, 129)
+        EventLabel.Name = "EventLabel"
+        EventLabel.Size = New Size(52, 30)
+        EventLabel.TabIndex = 21
+        EventLabel.Text = "temp"' 
+        ' AddVenueButton
+        ' 
+        AddVenueButton.BackColor = Color.Transparent
+        AddVenueButton.FlatStyle = FlatStyle.Flat
+        AddVenueButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        AddVenueButton.Location = New Point(51, 717)
+        AddVenueButton.Name = "AddVenueButton"
+        AddVenueButton.Size = New Size(63, 37)
+        AddVenueButton.TabIndex = 23
+        AddVenueButton.Text = "Add"
+        AddVenueButton.UseVisualStyleBackColor = False
+        ' 
+        ' RemoveVenueButton
+        ' 
+        RemoveVenueButton.BackColor = Color.Transparent
+        RemoveVenueButton.FlatStyle = FlatStyle.Flat
+        RemoveVenueButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        RemoveVenueButton.Location = New Point(267, 717)
+        RemoveVenueButton.Name = "RemoveVenueButton"
+        RemoveVenueButton.Size = New Size(94, 37)
+        RemoveVenueButton.TabIndex = 24
+        RemoveVenueButton.Text = "Remove"
+        RemoveVenueButton.UseVisualStyleBackColor = False
+        ' 
+        ' VenueListBox
+        ' 
+        VenueListBox.CheckBoxes = True
+        VenueListBox.Columns.AddRange(New ColumnHeader() {VID, VenueName, VenueAddress})
+        VenueListBox.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
+        VenueListBox.FullRowSelect = True
+        VenueListBox.Location = New Point(439, 516)
+        VenueListBox.Name = "VenueListBox"
+        VenueListBox.Size = New Size(673, 238)
+        VenueListBox.TabIndex = 25
+        VenueListBox.UseCompatibleStateImageBehavior = False
+        VenueListBox.View = View.Details
+        ' 
+        ' VID
+        ' 
+        VID.Text = "Venue ID"
+        VID.Width = 80
+        ' 
+        ' VenueName
+        ' 
+        VenueName.Text = "Venue"
+        VenueName.Width = 220
+        ' 
+        ' VenueAddress
+        ' 
+        VenueAddress.Text = "Address"
+        VenueAddress.Width = 1200
+        ' 
+        ' VenueNameBox
+        ' 
+        VenueNameBox.Location = New Point(51, 516)
+        VenueNameBox.MaxLength = 50
+        VenueNameBox.Name = "VenueNameBox"
+        VenueNameBox.Size = New Size(310, 23)
+        VenueNameBox.TabIndex = 26
+        ' 
+        ' VenueAddressBox
+        ' 
+        VenueAddressBox.Location = New Point(51, 586)
+        VenueAddressBox.MaxLength = 300
+        VenueAddressBox.Name = "VenueAddressBox"
+        VenueAddressBox.Size = New Size(310, 110)
+        VenueAddressBox.TabIndex = 27
+        VenueAddressBox.Text = ""' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.Transparent
+        Label5.BorderStyle = BorderStyle.Fixed3D
+        Label5.FlatStyle = FlatStyle.Popup
+        Label5.Font = New Font("Sitka Banner", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point)
+        Label5.ForeColor = Color.Black
+        Label5.Location = New Point(439, 472)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(98, 41)
+        Label5.TabIndex = 28
+        Label5.Text = "Venues"' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.BackColor = Color.Transparent
+        Label6.BorderStyle = BorderStyle.Fixed3D
+        Label6.FlatStyle = FlatStyle.Popup
+        Label6.Font = New Font("Sitka Banner", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point)
+        Label6.ForeColor = Color.Black
+        Label6.Location = New Point(79, 472)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(150, 41)
+        Label6.TabIndex = 29
+        Label6.Text = "Enter Name"' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.BackColor = Color.Transparent
+        Label7.BorderStyle = BorderStyle.Fixed3D
+        Label7.FlatStyle = FlatStyle.Popup
+        Label7.Font = New Font("Sitka Banner", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point)
+        Label7.ForeColor = Color.Black
+        Label7.Location = New Point(79, 542)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(175, 41)
+        Label7.TabIndex = 30
+        Label7.Text = "Enter Address"' 
         ' AdminHome
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        AutoScroll = True
         BackgroundImage = My.Resources.Resources.light
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1141, 637)
+        Controls.Add(Label7)
+        Controls.Add(Label6)
+        Controls.Add(Label5)
+        Controls.Add(VenueAddressBox)
+        Controls.Add(VenueNameBox)
+        Controls.Add(VenueListBox)
+        Controls.Add(RemoveVenueButton)
+        Controls.Add(AddVenueButton)
+        Controls.Add(EventLabel)
+        Controls.Add(AllEventButton)
         Controls.Add(Label4)
         Controls.Add(SystemLogs)
         Controls.Add(EventUpdate)
@@ -193,6 +351,7 @@ Partial Class AdminHome
         Controls.Add(Label1)
         Controls.Add(Label2)
         Name = "AdminHome"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "AdminHome"
         ResumeLayout(False)
         PerformLayout()
@@ -210,4 +369,17 @@ Partial Class AdminHome
     Friend WithEvents EventUpdate As Button
     Friend WithEvents SystemLogs As ListBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents AllEventButton As Button
+    Friend WithEvents EventLabel As Label
+    Friend WithEvents AddVenueButton As Button
+    Friend WithEvents RemoveVenueButton As Button
+    Friend WithEvents VenueListBox As ListView
+    Friend WithEvents VenueName As ColumnHeader
+    Friend WithEvents VenueAddress As ColumnHeader
+    Friend WithEvents VenueNameBox As TextBox
+    Friend WithEvents VenueAddressBox As RichTextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents VID As ColumnHeader
 End Class
