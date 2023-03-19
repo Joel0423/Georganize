@@ -18,7 +18,6 @@ Public Module GeoLoad
 
     Public Sub GeoClose()
         Sqlcon.Close()
-        LoginForm.Close()
     End Sub
 
     Public Sub FindAge()

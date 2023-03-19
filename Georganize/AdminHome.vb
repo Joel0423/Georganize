@@ -68,7 +68,7 @@ Public Class AdminHome
     End Sub
 
     Private Sub CloseForm() Handles MyBase.Closed
-        LoginForm.Close()
+        LoginForm.Show()
     End Sub
 
     Private Sub UserUpdate_Click(sender As Object, e As EventArgs) Handles UserUpdate.Click

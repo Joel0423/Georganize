@@ -88,6 +88,10 @@ Public Class LoginForm
         HomeForm.Show()
     End Sub
 
+    Private Sub CloseGeorganize() Handles Me.Closed
+        GeoClose()
+    End Sub
+
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
         If UsernameBox.Text = "admin" And PasswordBox.Text = "adm1n" Then
             AdminHome.Show()

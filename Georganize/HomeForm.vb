@@ -45,8 +45,10 @@ Public Class HomeForm
         End If
     End Sub
 
-    Private Sub ExitApplication(sender As Object, e As EventArgs) Handles MyBase.Closed
-        GeoClose()
+    Private Sub ExitApplication(sender As Object, e As EventArgs) Handles Me.Closed
+        LoginForm.Show()
+        LoggedInUser = ""
+        LoggedInUserAge = 0
     End Sub
 
     Private Sub CreateEventButton_Click(sender As Object, e As EventArgs) Handles CreateEventButton.Click

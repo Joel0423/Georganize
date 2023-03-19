@@ -17,7 +17,9 @@ Public Class EnrolledEventsForm
 
             Dim evename As String
             evename = Sqldr(1)
-            EnrolledEventsList.Items.Add(evename).SubItems.AddRange({Sqldr(2).ToString.Substring(0, 10), Sqldr(3).ToString, Sqldr(4).ToString})
+            Dim tempstart As DateTime = DateTime.Today.Add(Sqldr(3))
+            Dim tempend As DateTime = DateTime.Today.Add(Sqldr(4))
+            EnrolledEventsList.Items.Add(evename).SubItems.AddRange({Sqldr(2).ToString.Substring(0, 10), tempstart.ToString("hh:mm tt"), tempend.ToString("hh:mm tt")})
 
         End While
 

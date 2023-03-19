@@ -34,7 +34,22 @@ Public Class Profile
         Me.Hide()
     End Sub
 
-    Private Sub Profile_CLose() Handles Me.Closed
+    Private Sub Profile_CLose() Handles MyBase.Closed
         HomeForm.Show()
+    End Sub
+
+    Private Sub DeleteAccountButton_Click(sender As Object, e As EventArgs) Handles DeleteAccountButton.Click
+        Dim result As DialogResult
+        result = MessageBox.Show("Are you sure you want to delete you account?" & System.Environment.NewLine & " all of your events will be deleted", "Delete account?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        If result = DialogResult.Yes Then
+            Sqlcmd.Parameters.Clear()
+            Sqlcmd.Parameters.AddWithValue("logged", LoggedInUser)
+            Sqlcmd.CommandText = "delete from users where userid=@logged"
+            Sqlcmd.ExecuteNonQuery()
+            Sqlcmd.CommandText = "delete from events where organizerid=@logged"
+            Sqlcmd.ExecuteNonQuery()
+            Me.Close()
+            HomeForm.Close()
+        End If
     End Sub
 End Class
