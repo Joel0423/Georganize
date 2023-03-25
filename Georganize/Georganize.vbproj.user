@@ -5,6 +5,15 @@
     <Compile Update="AdminHome.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Dialog1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DiscussionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EditEventForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="EditProfileForm.vb">
       <SubType>Form</SubType>
     </Compile>

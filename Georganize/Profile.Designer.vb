@@ -43,7 +43,7 @@ Partial Class Profile
         ' UsernameLabel
         ' 
         UsernameLabel.AutoSize = True
-        UsernameLabel.BackColor = Color.Transparent
+        UsernameLabel.BackColor = Color.WhiteSmoke
         UsernameLabel.BorderStyle = BorderStyle.Fixed3D
         UsernameLabel.FlatStyle = FlatStyle.Popup
         UsernameLabel.Font = New Font("Palatino Linotype", 18F, FontStyle.Regular, GraphicsUnit.Point)
@@ -52,7 +52,8 @@ Partial Class Profile
         UsernameLabel.Name = "UsernameLabel"
         UsernameLabel.Size = New Size(124, 34)
         UsernameLabel.TabIndex = 7
-        UsernameLabel.Text = "Username"' 
+        UsernameLabel.Text = "Username"
+        ' 
         ' ProfilePictureBox
         ' 
         ProfilePictureBox.ErrorImage = My.Resources.Resources.DefaultPic
@@ -65,7 +66,7 @@ Partial Class Profile
         ' BirthdayLabel
         ' 
         BirthdayLabel.AutoSize = True
-        BirthdayLabel.BackColor = Color.Transparent
+        BirthdayLabel.BackColor = Color.WhiteSmoke
         BirthdayLabel.BorderStyle = BorderStyle.Fixed3D
         BirthdayLabel.FlatStyle = FlatStyle.Popup
         BirthdayLabel.Font = New Font("Palatino Linotype", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
@@ -74,11 +75,12 @@ Partial Class Profile
         BirthdayLabel.Name = "BirthdayLabel"
         BirthdayLabel.Size = New Size(87, 28)
         BirthdayLabel.TabIndex = 9
-        BirthdayLabel.Text = "Birthday"' 
+        BirthdayLabel.Text = "Birthday"
+        ' 
         ' GenderLabel
         ' 
         GenderLabel.AutoSize = True
-        GenderLabel.BackColor = Color.Transparent
+        GenderLabel.BackColor = Color.WhiteSmoke
         GenderLabel.BorderStyle = BorderStyle.Fixed3D
         GenderLabel.FlatStyle = FlatStyle.Popup
         GenderLabel.Font = New Font("Palatino Linotype", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
@@ -87,10 +89,11 @@ Partial Class Profile
         GenderLabel.Name = "GenderLabel"
         GenderLabel.Size = New Size(75, 28)
         GenderLabel.TabIndex = 10
-        GenderLabel.Text = "Gender"' 
+        GenderLabel.Text = "Gender"
+        ' 
         ' DeleteAccountButton
         ' 
-        DeleteAccountButton.BackColor = Color.Transparent
+        DeleteAccountButton.BackColor = Color.WhiteSmoke
         DeleteAccountButton.FlatStyle = FlatStyle.Flat
         DeleteAccountButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         DeleteAccountButton.Location = New Point(404, 336)
@@ -102,7 +105,7 @@ Partial Class Profile
         ' 
         ' EditProfileButton
         ' 
-        EditProfileButton.BackColor = Color.Transparent
+        EditProfileButton.BackColor = Color.WhiteSmoke
         EditProfileButton.FlatStyle = FlatStyle.Flat
         EditProfileButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         EditProfileButton.Location = New Point(102, 336)
@@ -115,20 +118,21 @@ Partial Class Profile
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.BackColor = Color.Transparent
+        Label1.BackColor = Color.WhiteSmoke
         Label1.BorderStyle = BorderStyle.Fixed3D
         Label1.FlatStyle = FlatStyle.Popup
         Label1.Font = New Font("SimSun-ExtB", 36F, FontStyle.Bold, GraphicsUnit.Point)
         Label1.ForeColor = Color.Black
-        Label1.Location = New Point(134, 9)
+        Label1.Location = New Point(159, 9)
         Label1.Name = "Label1"
         Label1.Size = New Size(322, 50)
         Label1.TabIndex = 13
-        Label1.Text = "Your Profile"' 
+        Label1.Text = "Your Profile"
+        ' 
         ' EmailLabel
         ' 
         EmailLabel.AutoSize = True
-        EmailLabel.BackColor = Color.Transparent
+        EmailLabel.BackColor = Color.WhiteSmoke
         EmailLabel.BorderStyle = BorderStyle.Fixed3D
         EmailLabel.FlatStyle = FlatStyle.Popup
         EmailLabel.Font = New Font("Palatino Linotype", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
@@ -137,11 +141,12 @@ Partial Class Profile
         EmailLabel.Name = "EmailLabel"
         EmailLabel.Size = New Size(62, 28)
         EmailLabel.TabIndex = 14
-        EmailLabel.Text = "Email"' 
+        EmailLabel.Text = "Email"
+        ' 
         ' PhoneLabel
         ' 
         PhoneLabel.AutoSize = True
-        PhoneLabel.BackColor = Color.Transparent
+        PhoneLabel.BackColor = Color.WhiteSmoke
         PhoneLabel.BorderStyle = BorderStyle.Fixed3D
         PhoneLabel.FlatStyle = FlatStyle.Popup
         PhoneLabel.Font = New Font("Palatino Linotype", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
@@ -150,7 +155,8 @@ Partial Class Profile
         PhoneLabel.Name = "PhoneLabel"
         PhoneLabel.Size = New Size(67, 28)
         PhoneLabel.TabIndex = 15
-        PhoneLabel.Text = "Phone"' 
+        PhoneLabel.Text = "Phone"
+        ' 
         ' Label2
         ' 
         Label2.AutoSize = True
@@ -159,7 +165,8 @@ Partial Class Profile
         Label2.Name = "Label2"
         Label2.Size = New Size(52, 21)
         Label2.TabIndex = 16
-        Label2.Text = "Name"' 
+        Label2.Text = "Name"
+        ' 
         ' Label3
         ' 
         Label3.AutoSize = True
@@ -168,7 +175,8 @@ Partial Class Profile
         Label3.Name = "Label3"
         Label3.Size = New Size(68, 21)
         Label3.TabIndex = 17
-        Label3.Text = "Birthday"' 
+        Label3.Text = "Birthday"
+        ' 
         ' Label4
         ' 
         Label4.AutoSize = True
@@ -177,7 +185,8 @@ Partial Class Profile
         Label4.Name = "Label4"
         Label4.Size = New Size(61, 21)
         Label4.TabIndex = 18
-        Label4.Text = "Gender"' 
+        Label4.Text = "Gender"
+        ' 
         ' Label5
         ' 
         Label5.AutoSize = True
@@ -186,7 +195,8 @@ Partial Class Profile
         Label5.Name = "Label5"
         Label5.Size = New Size(48, 21)
         Label5.TabIndex = 19
-        Label5.Text = "Email"' 
+        Label5.Text = "Email"
+        ' 
         ' Label6
         ' 
         Label6.AutoSize = True
@@ -195,7 +205,8 @@ Partial Class Profile
         Label6.Name = "Label6"
         Label6.Size = New Size(54, 21)
         Label6.TabIndex = 20
-        Label6.Text = "Phone"' 
+        Label6.Text = "Phone"
+        ' 
         ' Profile
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -217,6 +228,8 @@ Partial Class Profile
         Controls.Add(BirthdayLabel)
         Controls.Add(ProfilePictureBox)
         Controls.Add(UsernameLabel)
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "Profile"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Profile"

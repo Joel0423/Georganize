@@ -15,7 +15,7 @@ the same event using the discussion board.
 Hope you like it!"
     End Sub
 
-    Private Sub HelpForm_Close() Handles Me.Closed
+    Private Sub HelpForm_Close() Handles MyBase.Closed
         HomeForm.Show()
     End Sub
 End Class

@@ -22,13 +22,11 @@ Partial Class LoginForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        components = New ComponentModel.Container()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(LoginForm))
         UsernameBox = New TextBox()
         PasswordBox = New TextBox()
         SignInButton = New Button()
         SignUpButton = New Button()
-        Timer1 = New Timer(components)
         LoadingLabel = New Label()
         Label1 = New Label()
         SuspendLayout()
@@ -51,7 +49,7 @@ Partial Class LoginForm
         ' 
         ' SignInButton
         ' 
-        SignInButton.BackColor = Color.Transparent
+        SignInButton.BackColor = Color.WhiteSmoke
         SignInButton.FlatStyle = FlatStyle.Flat
         SignInButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         SignInButton.Location = New Point(406, 279)
@@ -63,7 +61,7 @@ Partial Class LoginForm
         ' 
         ' SignUpButton
         ' 
-        SignUpButton.BackColor = Color.Transparent
+        SignUpButton.BackColor = Color.WhiteSmoke
         SignUpButton.FlatStyle = FlatStyle.Flat
         SignUpButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         SignUpButton.Location = New Point(294, 279)
@@ -72,10 +70,6 @@ Partial Class LoginForm
         SignUpButton.TabIndex = 3
         SignUpButton.Text = "Sign-Up"
         SignUpButton.UseVisualStyleBackColor = False
-        ' 
-        ' Timer1
-        ' 
-        Timer1.Interval = 300
         ' 
         ' LoadingLabel
         ' 
@@ -90,7 +84,7 @@ Partial Class LoginForm
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.BackColor = Color.Transparent
+        Label1.BackColor = Color.WhiteSmoke
         Label1.BorderStyle = BorderStyle.Fixed3D
         Label1.FlatStyle = FlatStyle.Popup
         Label1.Font = New Font("SimSun-ExtB", 36F, FontStyle.Bold, GraphicsUnit.Point)
@@ -99,7 +93,8 @@ Partial Class LoginForm
         Label1.Name = "Label1"
         Label1.Size = New Size(272, 50)
         Label1.TabIndex = 6
-        Label1.Text = "Georganize"' 
+        Label1.Text = "Georganize"
+        ' 
         ' LoginForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -113,11 +108,12 @@ Partial Class LoginForm
         Controls.Add(SignInButton)
         Controls.Add(PasswordBox)
         Controls.Add(UsernameBox)
+        MaximizeBox = False
         MaximumSize = New Size(800, 450)
         MinimumSize = New Size(800, 450)
         Name = "LoginForm"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Login Form"
+        Text = "Login Page"
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -126,7 +122,6 @@ Partial Class LoginForm
     Friend WithEvents PasswordBox As TextBox
     Friend WithEvents SignInButton As Button
     Friend WithEvents SignUpButton As Button
-    Friend WithEvents Timer1 As Timer
     Friend WithEvents LoadingLabel As Label
     Friend WithEvents Label1 As Label
 End Class

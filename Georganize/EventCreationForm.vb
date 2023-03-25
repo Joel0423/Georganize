@@ -190,14 +190,32 @@ Public Class EventCreationForm
         Dim EventStart As Date = DateAdd(DateInterval.Minute, -30, EventStartTimePicker.Value)
 
         Sqlcmd.Parameters.AddWithValue("SelStart", EventStart.TimeOfDay)
-        Sqlcmd.Parameters.AddWithValue("SelVenue", VenueComboBox.SelectedIndex)
+        Sqlcmd.Parameters.AddWithValue("SelVenue", VenueComboBox.SelectedItem)
+        Sqlcmd.CommandText = "select venueid from venues where venues.name=@SelVenue"
+        Sqlcmd.Parameters.AddWithValue("selvid", Sqlcmd.ExecuteScalar)
 
         ' columns start-time and end-time have a '-'
         ' so they must be enclosed in []
-        Sqlcmd.CommandText = "select events.eventid from events,[venue-events] where events.eventid=[venue-events].eventid and [venue-events].venueid = @SelVenue and date = @SelectedDate and [start-time] < @SelEnd and @SelStart < [end-time]"
+        Sqlcmd.CommandText = "select events.eventid from events,[venue-events] where events.eventid=[venue-events].eventid and [venue-events].venueid = @selvid and date = @SelectedDate and [start-time] < @SelEnd and @SelStart < [end-time]"
 
         If Sqlcmd.ExecuteScalar = Nothing Then
-            SubmitDetails()
+            Dim timediff As TimeSpan = EventEndTimePicker.Value.TimeOfDay - EventStartTimePicker.Value.TimeOfDay
+            Dim tempc As Integer = Val(timediff.Hours) * 800
+
+            Dim costtext As String = "Total cost = hours booked x cost per hour:" & System.Environment.NewLine & System.Environment.NewLine & timediff.ToString & " x " & "Rs. 800 " & System.Environment.NewLine & "      = Rs. " & tempc.ToString
+            Dim PayDialog As New Dialog1
+            PayDialog.RichTextBox1.Text = costtext
+            PayDialog.ShowDialog()
+
+            If PayDialog.DialogResult = DialogResult.OK Then
+                MessageBox.Show("Payment completed", "Payment Completed", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                SubmitDetails()
+            Else
+                MessageBox.Show("Payment not sent, event has not been created", "Payment pending", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
+
+
         Else
             MessageBox.Show("There is a clash in the timings of your event and an already occuring event in venue: " & VenueComboBox.SelectedItem.ToString & "" & Environment.NewLine & "Change the date or the event timing", "Timing Clash", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
@@ -215,7 +233,7 @@ Public Class EventCreationForm
         Sqlcmd.Parameters.AddWithValue("endP", EventEndTimePicker.Value)
         Sqlcmd.Parameters.AddWithValue("visP", EventVisibilityComboBox.SelectedItem.ToString)
 
-        Sqlcmd.CommandText = "insert into events (organizerid,name,description,date,[start-time],[end-time],visibility,age) values (@loggedinP,@nameP,@descP,@dateP,@startP,@endP,@visP,@ageP); select SCOPE_IDENTITY();"
+        Sqlcmd.CommandText = "insert into events (organizerid,name,description,date,[start-time],[end-time],visibility,age,discussion) values (@loggedinP,@nameP,@descP,@dateP,@startP,@endP,@visP,@ageP, 'yes'); select SCOPE_IDENTITY();"
         ' scope_identity() return primary key of last inserted tuple
         Dim tempid As Integer = Sqlcmd.ExecuteScalar()
         Sqlcmd.Parameters.Clear()
@@ -302,7 +320,10 @@ Public Class EventCreationForm
             ListView1.Items.Clear()
             Dim Sqldr As SqlDataReader
             Sqlcmd.Parameters.Clear()
-            Sqlcmd.Parameters.AddWithValue("venueid", VenueComboBox.SelectedIndex)
+            Sqlcmd.Parameters.AddWithValue("vsel", VenueComboBox.SelectedItem.ToString)
+            Sqlcmd.CommandText = "select venueid from venues where name = @vsel"
+
+            Sqlcmd.Parameters.AddWithValue("venueid", Sqlcmd.ExecuteScalar)
             Sqlcmd.Parameters.AddWithValue("date", EventDatePicker.Value.Date)
             Sqlcmd.CommandText = "select distinct [start-time], [end-time] from events,venues,[venue-events] where events.eventid = [venue-events].eventid and [venue-events].venueid =@venueid  and date = @date"
             Sqldr = Sqlcmd.ExecuteReader

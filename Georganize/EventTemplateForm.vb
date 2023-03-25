@@ -3,20 +3,43 @@
 Public Class EventTemplateForm
     Dim Sqlcmd As New SqlCommand
 
+    Private Sub ShowDiscussion()
+        DuscussionButton.Visible = True
+    End Sub
+
     Private Sub EventTemplateForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PrivateCodeLabel.Visible = False
         VenueNameLabel.Visible = False
         VenueNameBox.Visible = False
         AgeResLabel.Visible = False
-        Label5.Text = "" 'to add some padding
+        DuscussionButton.Visible = False
 
         Sqlcmd.Connection = Sqlcon
         Me.DoubleBuffered = True
+
+
         Dim Sqldr As SqlDataReader
 
         Sqlcmd.Parameters.AddWithValue("eventidP", SelectedPublicEventID)
+        Sqlcmd.CommandText = "select discussion from events where eventid=@eventidP"
+        If Not IsDBNull(Sqlcmd.ExecuteScalar) Then
+
+            If Sqlcmd.ExecuteScalar.ToString = "yes" Then
+                Sqlcmd.Parameters.AddWithValue("logged", LoggedInUser)
+                Sqlcmd.CommandText = "select count(*) from enrollments where userid=@logged and eventid=@eventidP"
+                If Sqlcmd.ExecuteScalar <> Nothing Then
+                    ShowDiscussion()
+                End If
+
+            End If
+
+        Else
+
+        End If
+
+
         ' do not modify this query
-        Sqlcmd.CommandText = "select events.*, venues.name as Vname,ISNULL(venues.address, [user-location].address) as address,[private-events].code,users.username from events left join [venue-events] on @eventidP = [venue-events].eventid left join venues on venues.venueid = [venue-events].venueid left join [user-location] on @eventidP = [user-location].eventid left join [private-events] on @eventidP = [private-events].event_id left join users on events.organizerid = users.userid where events.eventid = @eventidP"
+        Sqlcmd.CommandText = "select events.eventid,events.organizerid,events.name,events.description,events.date,events.[start-time],events.[end-time],events.visibility,events.age, venues.name as Vname,ISNULL(venues.address, [user-location].address) as address,[private-events].code,users.username from events left join [venue-events] on @eventidP = [venue-events].eventid left join venues on venues.venueid = [venue-events].venueid left join [user-location] on @eventidP = [user-location].eventid left join [private-events] on @eventidP = [private-events].event_id left join users on events.organizerid = users.userid where events.eventid = @eventidP"
 
         'I think it is a good idea to show event visibility and age restriction in this form
         ' and the private code only if the organizer is logged in
@@ -62,7 +85,10 @@ Public Class EventTemplateForm
     End Sub
 
     Private Sub EventTemplateForm_Close() Handles MyBase.Closing
+        SelectedPublicEventID = ""
+        DiscussionForm.Close()
         HomeForm.Show()
+
     End Sub
 
     Private Sub CheckEnrollments()
@@ -86,11 +112,22 @@ Public Class EventTemplateForm
         Sqlcmd.Parameters.Clear()
         CheckEnrollments()
         MessageBox.Show("You have been enrolled for the event : " & EventNameLabel.Text, "Enrolled", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Me.Close()
+        Sqlcmd.Parameters.Clear()
+        Sqlcmd.Parameters.AddWithValue("eventidP", SelectedPublicEventID)
+        Sqlcmd.CommandText = "select discussion from events where eventid=@eventidP"
+        If Not IsDBNull(Sqlcmd.ExecuteScalar) Then
+
+            If Sqlcmd.ExecuteScalar.ToString = "yes" Then
+                ShowDiscussion()
+            End If
+        End If
+
+        Sqlcmd.Parameters.Clear()
+        EventJoinButton.Visible = False
     End Sub
 
-    Private Sub EventTemplateFormClosed()
-        SelectedPublicEventID = ""
+    Private Sub DuscussionButton_Click(sender As Object, e As EventArgs) Handles DuscussionButton.Click
+        DiscussionForm.Show()
     End Sub
 
 End Class

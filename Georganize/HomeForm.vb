@@ -15,6 +15,8 @@ Public Class HomeForm
     End Sub
 
     Private Sub RefreshForm() Handles MyBase.VisibleChanged
+        InvitationsBox.Items.Clear()
+
         If Me.Visible = True Then
             PublicEventsList.Items.Clear()
             Dim Sqldr As SqlDataReader
@@ -45,7 +47,7 @@ Public Class HomeForm
         End If
     End Sub
 
-    Private Sub ExitApplication(sender As Object, e As EventArgs) Handles Me.Closed
+    Private Sub ExitApplication(sender As Object, e As EventArgs) Handles MyBase.Closed
         LoginForm.Show()
         LoggedInUser = ""
         LoggedInUserAge = 0

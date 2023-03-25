@@ -38,7 +38,7 @@ Public Class EditProfileForm
         Sqlcmd.Parameters.Clear()
     End Sub
 
-    Private Sub EditProfileForm_CLose() Handles Me.Closed
+    Private Sub EditProfileForm_CLose() Handles MyBase.Closed
         Profile.Show()
     End Sub
 

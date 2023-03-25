@@ -44,6 +44,7 @@ Partial Class HomeForm
         ' 
         ' CreateEventButton
         ' 
+        CreateEventButton.Anchor = AnchorStyles.Top
         CreateEventButton.BackColor = Color.FloralWhite
         CreateEventButton.FlatStyle = FlatStyle.Flat
         CreateEventButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
@@ -56,6 +57,7 @@ Partial Class HomeForm
         ' 
         ' ProfileButton
         ' 
+        ProfileButton.Anchor = AnchorStyles.Top
         ProfileButton.BackColor = Color.FloralWhite
         ProfileButton.FlatStyle = FlatStyle.Flat
         ProfileButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
@@ -68,6 +70,7 @@ Partial Class HomeForm
         ' 
         ' EnrolledEventsButton
         ' 
+        EnrolledEventsButton.Anchor = AnchorStyles.Top
         EnrolledEventsButton.BackColor = Color.FloralWhite
         EnrolledEventsButton.FlatStyle = FlatStyle.Flat
         EnrolledEventsButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
@@ -80,6 +83,7 @@ Partial Class HomeForm
         ' 
         ' HelpButton
         ' 
+        HelpButton.Anchor = AnchorStyles.Top
         HelpButton.BackColor = Color.FloralWhite
         HelpButton.FlatStyle = FlatStyle.Flat
         HelpButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
@@ -92,7 +96,8 @@ Partial Class HomeForm
         ' 
         ' Button2
         ' 
-        Button2.BackColor = Color.Transparent
+        Button2.Anchor = AnchorStyles.Bottom
+        Button2.BackColor = Color.WhiteSmoke
         Button2.FlatStyle = FlatStyle.Flat
         Button2.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         Button2.Location = New Point(46, 335)
@@ -104,7 +109,8 @@ Partial Class HomeForm
         ' 
         ' Button3
         ' 
-        Button3.BackColor = Color.Transparent
+        Button3.Anchor = AnchorStyles.Bottom
+        Button3.BackColor = Color.WhiteSmoke
         Button3.FlatStyle = FlatStyle.Flat
         Button3.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         Button3.Location = New Point(145, 335)
@@ -116,8 +122,9 @@ Partial Class HomeForm
         ' 
         ' Label1
         ' 
+        Label1.Anchor = AnchorStyles.Top
         Label1.AutoSize = True
-        Label1.BackColor = Color.Transparent
+        Label1.BackColor = Color.WhiteSmoke
         Label1.BorderStyle = BorderStyle.Fixed3D
         Label1.FlatStyle = FlatStyle.Popup
         Label1.Font = New Font("SimSun-ExtB", 36F, FontStyle.Bold, GraphicsUnit.Point)
@@ -126,9 +133,11 @@ Partial Class HomeForm
         Label1.Name = "Label1"
         Label1.Size = New Size(272, 50)
         Label1.TabIndex = 8
-        Label1.Text = "Georganize"' 
+        Label1.Text = "Georganize"
+        ' 
         ' Label2
         ' 
+        Label2.Anchor = AnchorStyles.Top
         Label2.AutoSize = True
         Label2.BackColor = Color.WhiteSmoke
         Label2.BorderStyle = BorderStyle.FixedSingle
@@ -139,9 +148,11 @@ Partial Class HomeForm
         Label2.Name = "Label2"
         Label2.Size = New Size(155, 26)
         Label2.TabIndex = 9
-        Label2.Text = "Invitations"' 
+        Label2.Text = "Invitations"
+        ' 
         ' CodeBox
         ' 
+        CodeBox.Anchor = AnchorStyles.Bottom
         CodeBox.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         CodeBox.Location = New Point(245, 408)
         CodeBox.MaxLength = 20
@@ -154,7 +165,8 @@ Partial Class HomeForm
         ' 
         ' Button1
         ' 
-        Button1.BackColor = Color.Transparent
+        Button1.Anchor = AnchorStyles.Bottom
+        Button1.BackColor = Color.WhiteSmoke
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         Button1.Location = New Point(429, 406)
@@ -166,6 +178,7 @@ Partial Class HomeForm
         ' 
         ' Label3
         ' 
+        Label3.Anchor = AnchorStyles.Top
         Label3.AutoSize = True
         Label3.BackColor = Color.WhiteSmoke
         Label3.BorderStyle = BorderStyle.FixedSingle
@@ -176,9 +189,11 @@ Partial Class HomeForm
         Label3.Name = "Label3"
         Label3.Size = New Size(181, 26)
         Label3.TabIndex = 16
-        Label3.Text = "Public Events"' 
+        Label3.Text = "Public Events"
+        ' 
         ' ManageEventsButton
         ' 
+        ManageEventsButton.Anchor = AnchorStyles.Top
         ManageEventsButton.BackColor = Color.FloralWhite
         ManageEventsButton.FlatStyle = FlatStyle.Flat
         ManageEventsButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
@@ -192,6 +207,7 @@ Partial Class HomeForm
         ' PublicEventsList
         ' 
         PublicEventsList.Alignment = ListViewAlignment.Left
+        PublicEventsList.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom
         PublicEventsList.Columns.AddRange(New ColumnHeader() {EventName, EventDate})
         PublicEventsList.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         PublicEventsList.HeaderStyle = ColumnHeaderStyle.Nonclickable
@@ -215,7 +231,8 @@ Partial Class HomeForm
         ' 
         ' InviteButton
         ' 
-        InviteButton.BackColor = Color.Transparent
+        InviteButton.Anchor = AnchorStyles.Bottom
+        InviteButton.BackColor = Color.WhiteSmoke
         InviteButton.FlatStyle = FlatStyle.Flat
         InviteButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         InviteButton.Location = New Point(251, 335)
@@ -227,6 +244,7 @@ Partial Class HomeForm
         ' 
         ' InvitationsBox
         ' 
+        InvitationsBox.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom
         InvitationsBox.CheckOnClick = True
         InvitationsBox.FormattingEnabled = True
         InvitationsBox.Location = New Point(46, 217)
@@ -259,7 +277,7 @@ Partial Class HomeForm
         Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
         Name = "HomeForm"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Home Form"
+        Text = "Home Page"
         ResumeLayout(False)
         PerformLayout()
     End Sub

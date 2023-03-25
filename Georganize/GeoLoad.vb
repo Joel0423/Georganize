@@ -9,10 +9,10 @@ Public Module GeoLoad
     Public LoggedInUserAge = 0
     Public VenueAddressList As New List(Of String)
     Public ProfilePicDirectory As String = "C:\Users\joela\Desktop\Georganize-20230215T143004Z-001\GeoProfilePics"
-    Public InitialDirectoryString As String = "C:\Users\Public\Pictures"
+    Public InitialDirectoryString As String = "C:\Users\joela\Pictures"
 
     Public Sub GeoOpen()
-        Sqlcon.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\joela\Desktop\Georganize-20230215T143004Z-001\Georganize\Georganize\GeoDatabase.mdf;Integrated Security=True"
+        Sqlcon.ConnectionString = "Data Source=JOEL-WINDOWS\SQLEXPRESS;Initial Catalog=GEODATABASE;Integrated Security=True"
         Sqlcon.Open()
     End Sub
 

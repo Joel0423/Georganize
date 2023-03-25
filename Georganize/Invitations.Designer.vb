@@ -37,6 +37,7 @@ Partial Class Invitations
         ' 
         ' EnrolledEvents
         ' 
+        EnrolledEvents.Anchor = AnchorStyles.None
         EnrolledEvents.FormattingEnabled = True
         EnrolledEvents.Location = New Point(118, 177)
         EnrolledEvents.Name = "EnrolledEvents"
@@ -45,6 +46,7 @@ Partial Class Invitations
         ' 
         ' Label3
         ' 
+        Label3.Anchor = AnchorStyles.None
         Label3.AutoSize = True
         Label3.BackColor = Color.WhiteSmoke
         Label3.BorderStyle = BorderStyle.FixedSingle
@@ -55,9 +57,11 @@ Partial Class Invitations
         Label3.Name = "Label3"
         Label3.Size = New Size(77, 26)
         Label3.TabIndex = 17
-        Label3.Text = "Event"' 
+        Label3.Text = "Event"
+        ' 
         ' Label1
         ' 
+        Label1.Anchor = AnchorStyles.Top
         Label1.AutoSize = True
         Label1.BackColor = Color.WhiteSmoke
         Label1.BorderStyle = BorderStyle.FixedSingle
@@ -68,11 +72,13 @@ Partial Class Invitations
         Label1.Name = "Label1"
         Label1.Size = New Size(77, 26)
         Label1.TabIndex = 19
-        Label1.Text = "Users"' 
+        Label1.Text = "Users"
+        ' 
         ' Label2
         ' 
+        Label2.Anchor = AnchorStyles.Top
         Label2.AutoSize = True
-        Label2.BackColor = Color.Transparent
+        Label2.BackColor = Color.WhiteSmoke
         Label2.BorderStyle = BorderStyle.Fixed3D
         Label2.FlatStyle = FlatStyle.Popup
         Label2.Font = New Font("SimSun-ExtB", 36F, FontStyle.Bold, GraphicsUnit.Point)
@@ -81,10 +87,12 @@ Partial Class Invitations
         Label2.Name = "Label2"
         Label2.Size = New Size(347, 50)
         Label2.TabIndex = 20
-        Label2.Text = "Invite Others"' 
+        Label2.Text = "Invite Others"
+        ' 
         ' InviteButton
         ' 
-        InviteButton.BackColor = Color.Transparent
+        InviteButton.Anchor = AnchorStyles.Bottom
+        InviteButton.BackColor = Color.WhiteSmoke
         InviteButton.FlatStyle = FlatStyle.Flat
         InviteButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         InviteButton.Location = New Point(423, 331)
@@ -96,6 +104,7 @@ Partial Class Invitations
         ' 
         ' SystemUsers
         ' 
+        SystemUsers.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom
         SystemUsers.CheckOnClick = True
         SystemUsers.FormattingEnabled = True
         SystemUsers.Location = New Point(423, 177)
@@ -105,6 +114,7 @@ Partial Class Invitations
         ' 
         ' Label4
         ' 
+        Label4.Anchor = AnchorStyles.None
         Label4.AutoSize = True
         Label4.BackColor = Color.WhiteSmoke
         Label4.BorderStyle = BorderStyle.FixedSingle
@@ -115,9 +125,11 @@ Partial Class Invitations
         Label4.Name = "Label4"
         Label4.Size = New Size(207, 26)
         Label4.TabIndex = 23
-        Label4.Text = "Search For User"' 
+        Label4.Text = "Search For User"
+        ' 
         ' Label5
         ' 
+        Label5.Anchor = AnchorStyles.None
         Label5.AutoSize = True
         Label5.BackColor = Color.WhiteSmoke
         Label5.BorderStyle = BorderStyle.FixedSingle
@@ -128,9 +140,11 @@ Partial Class Invitations
         Label5.Name = "Label5"
         Label5.Size = New Size(142, 26)
         Label5.TabIndex = 24
-        Label5.Text = "Search By-"' 
+        Label5.Text = "Search By-"
+        ' 
         ' SearchBox
         ' 
+        SearchBox.Anchor = AnchorStyles.None
         SearchBox.Location = New Point(118, 232)
         SearchBox.Name = "SearchBox"
         SearchBox.Size = New Size(240, 23)
@@ -138,6 +152,7 @@ Partial Class Invitations
         ' 
         ' SearchByBox
         ' 
+        SearchByBox.Anchor = AnchorStyles.None
         SearchByBox.FormattingEnabled = True
         SearchByBox.Location = New Point(118, 287)
         SearchByBox.Name = "SearchByBox"
@@ -146,7 +161,8 @@ Partial Class Invitations
         ' 
         ' SearchButton
         ' 
-        SearchButton.BackColor = Color.Transparent
+        SearchButton.Anchor = AnchorStyles.None
+        SearchButton.BackColor = Color.WhiteSmoke
         SearchButton.FlatStyle = FlatStyle.Flat
         SearchButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         SearchButton.Location = New Point(118, 331)
@@ -160,6 +176,7 @@ Partial Class Invitations
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.WhiteSmoke
         BackgroundImage = My.Resources.Resources.light1
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(800, 450)

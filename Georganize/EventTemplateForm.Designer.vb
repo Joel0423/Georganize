@@ -38,20 +38,20 @@ Partial Class EventTemplateForm
         VisibilityLabel = New Label()
         PrivateCodeLabel = New Label()
         AgeResLabel = New Label()
-        Label5 = New Label()
         EventJoinButton = New Button()
+        DuscussionButton = New Button()
         SuspendLayout()
         ' 
         ' EventNameLabel
         ' 
-        EventNameLabel.BackColor = Color.Transparent
+        EventNameLabel.BackColor = Color.WhiteSmoke
         EventNameLabel.BorderStyle = BorderStyle.Fixed3D
         EventNameLabel.FlatStyle = FlatStyle.Popup
         EventNameLabel.Font = New Font("SimSun-ExtB", 26.25F, FontStyle.Bold, GraphicsUnit.Point)
         EventNameLabel.ForeColor = Color.Black
-        EventNameLabel.Location = New Point(359, 5)
+        EventNameLabel.Location = New Point(271, 9)
         EventNameLabel.Name = "EventNameLabel"
-        EventNameLabel.Size = New Size(251, 50)
+        EventNameLabel.Size = New Size(460, 50)
         EventNameLabel.TabIndex = 9
         EventNameLabel.Text = "event name"
         EventNameLabel.TextAlign = ContentAlignment.MiddleCenter
@@ -59,29 +59,31 @@ Partial Class EventTemplateForm
         ' OrganizerNameLabel
         ' 
         OrganizerNameLabel.AutoSize = True
-        OrganizerNameLabel.BackColor = Color.Transparent
+        OrganizerNameLabel.BackColor = Color.WhiteSmoke
         OrganizerNameLabel.BorderStyle = BorderStyle.Fixed3D
         OrganizerNameLabel.FlatStyle = FlatStyle.Popup
         OrganizerNameLabel.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
         OrganizerNameLabel.ForeColor = Color.Black
-        OrganizerNameLabel.Location = New Point(214, 110)
+        OrganizerNameLabel.Location = New Point(154, 81)
         OrganizerNameLabel.Name = "OrganizerNameLabel"
         OrganizerNameLabel.Size = New Size(95, 27)
         OrganizerNameLabel.TabIndex = 10
-        OrganizerNameLabel.Text = "org name"' 
+        OrganizerNameLabel.Text = "org name"
+        ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.BackColor = Color.Transparent
+        Label1.BackColor = Color.WhiteSmoke
         Label1.BorderStyle = BorderStyle.Fixed3D
         Label1.FlatStyle = FlatStyle.Popup
         Label1.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
         Label1.ForeColor = Color.Black
-        Label1.Location = New Point(72, 110)
+        Label1.Location = New Point(12, 81)
         Label1.Name = "Label1"
         Label1.Size = New Size(136, 27)
         Label1.TabIndex = 11
-        Label1.Text = "Organized By :"' 
+        Label1.Text = "Organized By :"
+        ' 
         ' EventDescriptionBox
         ' 
         EventDescriptionBox.BackColor = Color.AntiqueWhite
@@ -92,7 +94,8 @@ Partial Class EventTemplateForm
         EventDescriptionBox.ReadOnly = True
         EventDescriptionBox.Size = New Size(439, 181)
         EventDescriptionBox.TabIndex = 12
-        EventDescriptionBox.Text = ""' 
+        EventDescriptionBox.Text = ""
+        ' 
         ' EventAddressBox
         ' 
         EventAddressBox.BackColor = Color.AntiqueWhite
@@ -103,11 +106,12 @@ Partial Class EventTemplateForm
         EventAddressBox.Size = New Size(439, 92)
         EventAddressBox.TabIndex = 13
         EventAddressBox.TabStop = False
-        EventAddressBox.Text = ""' 
+        EventAddressBox.Text = ""
+        ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.BackColor = Color.Transparent
+        Label2.BackColor = Color.WhiteSmoke
         Label2.BorderStyle = BorderStyle.Fixed3D
         Label2.FlatStyle = FlatStyle.Popup
         Label2.Font = New Font("SimSun-ExtB", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
@@ -116,11 +120,12 @@ Partial Class EventTemplateForm
         Label2.Name = "Label2"
         Label2.Size = New Size(77, 21)
         Label2.TabIndex = 15
-        Label2.Text = "Date :"' 
+        Label2.Text = "Date :"
+        ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.BackColor = Color.Transparent
+        Label3.BackColor = Color.WhiteSmoke
         Label3.BorderStyle = BorderStyle.Fixed3D
         Label3.FlatStyle = FlatStyle.Popup
         Label3.Font = New Font("SimSun-ExtB", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
@@ -129,11 +134,12 @@ Partial Class EventTemplateForm
         Label3.Name = "Label3"
         Label3.Size = New Size(143, 21)
         Label3.TabIndex = 16
-        Label3.Text = "Start Time :"' 
+        Label3.Text = "Start Time :"
+        ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.BackColor = Color.Transparent
+        Label4.BackColor = Color.WhiteSmoke
         Label4.BorderStyle = BorderStyle.Fixed3D
         Label4.FlatStyle = FlatStyle.Popup
         Label4.Font = New Font("SimSun-ExtB", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
@@ -142,7 +148,8 @@ Partial Class EventTemplateForm
         Label4.Name = "Label4"
         Label4.Size = New Size(121, 21)
         Label4.TabIndex = 17
-        Label4.Text = "End Time :"' 
+        Label4.Text = "End Time :"
+        ' 
         ' EventDateBox
         ' 
         EventDateBox.BackColor = Color.AntiqueWhite
@@ -176,7 +183,7 @@ Partial Class EventTemplateForm
         ' VenueNameLabel
         ' 
         VenueNameLabel.AutoSize = True
-        VenueNameLabel.BackColor = Color.Transparent
+        VenueNameLabel.BackColor = Color.WhiteSmoke
         VenueNameLabel.BorderStyle = BorderStyle.Fixed3D
         VenueNameLabel.FlatStyle = FlatStyle.Popup
         VenueNameLabel.Font = New Font("SimSun-ExtB", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
@@ -185,7 +192,8 @@ Partial Class EventTemplateForm
         VenueNameLabel.Name = "VenueNameLabel"
         VenueNameLabel.Size = New Size(66, 21)
         VenueNameLabel.TabIndex = 21
-        VenueNameLabel.Text = "Venue"' 
+        VenueNameLabel.Text = "Venue"
+        ' 
         ' VenueNameBox
         ' 
         VenueNameBox.BackColor = Color.AntiqueWhite
@@ -198,12 +206,12 @@ Partial Class EventTemplateForm
         ' VisibilityLabel
         ' 
         VisibilityLabel.AutoSize = True
-        VisibilityLabel.BackColor = Color.Transparent
+        VisibilityLabel.BackColor = Color.WhiteSmoke
         VisibilityLabel.BorderStyle = BorderStyle.Fixed3D
         VisibilityLabel.FlatStyle = FlatStyle.Popup
         VisibilityLabel.Font = New Font("SimSun-ExtB", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
         VisibilityLabel.ForeColor = Color.Black
-        VisibilityLabel.Location = New Point(118, 20)
+        VisibilityLabel.Location = New Point(154, 27)
         VisibilityLabel.Name = "VisibilityLabel"
         VisibilityLabel.Size = New Size(44, 21)
         VisibilityLabel.TabIndex = 23
@@ -213,12 +221,12 @@ Partial Class EventTemplateForm
         ' PrivateCodeLabel
         ' 
         PrivateCodeLabel.AutoSize = True
-        PrivateCodeLabel.BackColor = Color.Transparent
+        PrivateCodeLabel.BackColor = Color.WhiteSmoke
         PrivateCodeLabel.BorderStyle = BorderStyle.Fixed3D
         PrivateCodeLabel.FlatStyle = FlatStyle.Popup
         PrivateCodeLabel.Font = New Font("SimSun-ExtB", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
         PrivateCodeLabel.ForeColor = Color.Black
-        PrivateCodeLabel.Location = New Point(12, 20)
+        PrivateCodeLabel.Location = New Point(12, 27)
         PrivateCodeLabel.Name = "PrivateCodeLabel"
         PrivateCodeLabel.Size = New Size(55, 21)
         PrivateCodeLabel.TabIndex = 24
@@ -228,7 +236,7 @@ Partial Class EventTemplateForm
         ' AgeResLabel
         ' 
         AgeResLabel.AutoSize = True
-        AgeResLabel.BackColor = Color.Transparent
+        AgeResLabel.BackColor = Color.WhiteSmoke
         AgeResLabel.BorderStyle = BorderStyle.Fixed3D
         AgeResLabel.FlatStyle = FlatStyle.Popup
         AgeResLabel.Font = New Font("SimSun-ExtB", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
@@ -237,39 +245,43 @@ Partial Class EventTemplateForm
         AgeResLabel.Name = "AgeResLabel"
         AgeResLabel.Size = New Size(143, 21)
         AgeResLabel.TabIndex = 26
-        AgeResLabel.Text = "Minimum Age:"' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.Location = New Point(414, 605)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(97, 15)
-        Label5.TabIndex = 27
-        Label5.Text = "label for padding"
-        Label5.Visible = False
+        AgeResLabel.Text = "Minimum Age:"
         ' 
         ' EventJoinButton
         ' 
-        EventJoinButton.BackColor = Color.Transparent
+        EventJoinButton.BackColor = Color.WhiteSmoke
         EventJoinButton.FlatStyle = FlatStyle.Flat
         EventJoinButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        EventJoinButton.Location = New Point(544, 409)
+        EventJoinButton.Location = New Point(725, 409)
         EventJoinButton.Name = "EventJoinButton"
         EventJoinButton.Size = New Size(157, 40)
         EventJoinButton.TabIndex = 28
         EventJoinButton.Text = "Join"
         EventJoinButton.UseVisualStyleBackColor = False
         ' 
+        ' DuscussionButton
+        ' 
+        DuscussionButton.BackColor = Color.WhiteSmoke
+        DuscussionButton.FlatStyle = FlatStyle.Flat
+        DuscussionButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        DuscussionButton.Location = New Point(544, 409)
+        DuscussionButton.Name = "DuscussionButton"
+        DuscussionButton.Size = New Size(157, 40)
+        DuscussionButton.TabIndex = 29
+        DuscussionButton.Text = "Discussion"
+        DuscussionButton.UseVisualStyleBackColor = False
+        ' 
         ' EventTemplateForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
+        BackColor = Color.WhiteSmoke
         BackgroundImage = My.Resources.Resources.light
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1002, 485)
+        Controls.Add(DuscussionButton)
         Controls.Add(EventJoinButton)
-        Controls.Add(Label5)
         Controls.Add(AgeResLabel)
         Controls.Add(PrivateCodeLabel)
         Controls.Add(VisibilityLabel)
@@ -309,6 +321,6 @@ Partial Class EventTemplateForm
     Friend WithEvents VisibilityLabel As Label
     Friend WithEvents PrivateCodeLabel As Label
     Friend WithEvents AgeResLabel As Label
-    Friend WithEvents Label5 As Label
     Friend WithEvents EventJoinButton As Button
+    Friend WithEvents DuscussionButton As Button
 End Class

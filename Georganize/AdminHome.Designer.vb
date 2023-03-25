@@ -52,7 +52,7 @@ Partial Class AdminHome
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.BackColor = Color.Transparent
+        Label2.BackColor = Color.WhiteSmoke
         Label2.BorderStyle = BorderStyle.Fixed3D
         Label2.FlatStyle = FlatStyle.Popup
         Label2.Font = New Font("SimSun-ExtB", 21.75F, FontStyle.Bold, GraphicsUnit.Point)
@@ -61,11 +61,12 @@ Partial Class AdminHome
         Label2.Name = "Label2"
         Label2.Size = New Size(175, 31)
         Label2.TabIndex = 8
-        Label2.Text = "Admin Home"' 
+        Label2.Text = "Admin Home"
+        ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.BackColor = Color.Transparent
+        Label1.BackColor = Color.WhiteSmoke
         Label1.BorderStyle = BorderStyle.Fixed3D
         Label1.FlatStyle = FlatStyle.Popup
         Label1.Font = New Font("Sitka Banner", 24F, FontStyle.Bold, GraphicsUnit.Point)
@@ -74,11 +75,12 @@ Partial Class AdminHome
         Label1.Name = "Label1"
         Label1.Size = New Size(95, 49)
         Label1.TabIndex = 9
-        Label1.Text = "Users"' 
+        Label1.Text = "Users"
+        ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.BackColor = Color.Transparent
+        Label3.BackColor = Color.WhiteSmoke
         Label3.BorderStyle = BorderStyle.Fixed3D
         Label3.FlatStyle = FlatStyle.Popup
         Label3.Font = New Font("Sitka Banner", 24F, FontStyle.Bold, GraphicsUnit.Point)
@@ -87,7 +89,8 @@ Partial Class AdminHome
         Label3.Name = "Label3"
         Label3.Size = New Size(109, 49)
         Label3.TabIndex = 10
-        Label3.Text = "Events"' 
+        Label3.Text = "Events"
+        ' 
         ' UserList
         ' 
         UserList.CheckOnClick = True
@@ -108,7 +111,7 @@ Partial Class AdminHome
         ' 
         ' UserDelete
         ' 
-        UserDelete.BackColor = Color.Transparent
+        UserDelete.BackColor = Color.WhiteSmoke
         UserDelete.FlatStyle = FlatStyle.Flat
         UserDelete.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         UserDelete.Location = New Point(51, 406)
@@ -120,7 +123,7 @@ Partial Class AdminHome
         ' 
         ' UserUpdate
         ' 
-        UserUpdate.BackColor = Color.Transparent
+        UserUpdate.BackColor = Color.WhiteSmoke
         UserUpdate.FlatStyle = FlatStyle.Flat
         UserUpdate.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         UserUpdate.Location = New Point(120, 406)
@@ -132,7 +135,7 @@ Partial Class AdminHome
         ' 
         ' FetchUserEvents
         ' 
-        FetchUserEvents.BackColor = Color.Transparent
+        FetchUserEvents.BackColor = Color.WhiteSmoke
         FetchUserEvents.FlatStyle = FlatStyle.Flat
         FetchUserEvents.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         FetchUserEvents.Location = New Point(194, 406)
@@ -144,7 +147,7 @@ Partial Class AdminHome
         ' 
         ' EventDelete
         ' 
-        EventDelete.BackColor = Color.Transparent
+        EventDelete.BackColor = Color.WhiteSmoke
         EventDelete.FlatStyle = FlatStyle.Flat
         EventDelete.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         EventDelete.Location = New Point(424, 406)
@@ -156,7 +159,7 @@ Partial Class AdminHome
         ' 
         ' EventUpdate
         ' 
-        EventUpdate.BackColor = Color.Transparent
+        EventUpdate.BackColor = Color.WhiteSmoke
         EventUpdate.FlatStyle = FlatStyle.Flat
         EventUpdate.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         EventUpdate.Location = New Point(493, 406)
@@ -178,7 +181,7 @@ Partial Class AdminHome
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.BackColor = Color.Transparent
+        Label4.BackColor = Color.WhiteSmoke
         Label4.BorderStyle = BorderStyle.Fixed3D
         Label4.FlatStyle = FlatStyle.Popup
         Label4.Font = New Font("Sitka Banner", 24F, FontStyle.Bold, GraphicsUnit.Point)
@@ -187,10 +190,11 @@ Partial Class AdminHome
         Label4.Name = "Label4"
         Label4.Size = New Size(185, 49)
         Label4.TabIndex = 19
-        Label4.Text = "System Logs"' 
+        Label4.Text = "System Logs"
+        ' 
         ' AllEventButton
         ' 
-        AllEventButton.BackColor = Color.Transparent
+        AllEventButton.BackColor = Color.WhiteSmoke
         AllEventButton.FlatStyle = FlatStyle.Flat
         AllEventButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         AllEventButton.Location = New Point(567, 406)
@@ -203,7 +207,7 @@ Partial Class AdminHome
         ' EventLabel
         ' 
         EventLabel.AutoSize = True
-        EventLabel.BackColor = Color.Transparent
+        EventLabel.BackColor = Color.WhiteSmoke
         EventLabel.BorderStyle = BorderStyle.Fixed3D
         EventLabel.FlatStyle = FlatStyle.Popup
         EventLabel.Font = New Font("Sitka Banner", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point)
@@ -212,10 +216,11 @@ Partial Class AdminHome
         EventLabel.Name = "EventLabel"
         EventLabel.Size = New Size(52, 30)
         EventLabel.TabIndex = 21
-        EventLabel.Text = "temp"' 
+        EventLabel.Text = "temp"
+        ' 
         ' AddVenueButton
         ' 
-        AddVenueButton.BackColor = Color.Transparent
+        AddVenueButton.BackColor = Color.WhiteSmoke
         AddVenueButton.FlatStyle = FlatStyle.Flat
         AddVenueButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         AddVenueButton.Location = New Point(51, 717)
@@ -227,7 +232,7 @@ Partial Class AdminHome
         ' 
         ' RemoveVenueButton
         ' 
-        RemoveVenueButton.BackColor = Color.Transparent
+        RemoveVenueButton.BackColor = Color.WhiteSmoke
         RemoveVenueButton.FlatStyle = FlatStyle.Flat
         RemoveVenueButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         RemoveVenueButton.Location = New Point(267, 717)
@@ -280,11 +285,12 @@ Partial Class AdminHome
         VenueAddressBox.Name = "VenueAddressBox"
         VenueAddressBox.Size = New Size(310, 110)
         VenueAddressBox.TabIndex = 27
-        VenueAddressBox.Text = ""' 
+        VenueAddressBox.Text = ""
+        ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.BackColor = Color.Transparent
+        Label5.BackColor = Color.WhiteSmoke
         Label5.BorderStyle = BorderStyle.Fixed3D
         Label5.FlatStyle = FlatStyle.Popup
         Label5.Font = New Font("Sitka Banner", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point)
@@ -293,11 +299,12 @@ Partial Class AdminHome
         Label5.Name = "Label5"
         Label5.Size = New Size(98, 41)
         Label5.TabIndex = 28
-        Label5.Text = "Venues"' 
+        Label5.Text = "Venues"
+        ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.BackColor = Color.Transparent
+        Label6.BackColor = Color.WhiteSmoke
         Label6.BorderStyle = BorderStyle.Fixed3D
         Label6.FlatStyle = FlatStyle.Popup
         Label6.Font = New Font("Sitka Banner", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point)
@@ -306,11 +313,12 @@ Partial Class AdminHome
         Label6.Name = "Label6"
         Label6.Size = New Size(150, 41)
         Label6.TabIndex = 29
-        Label6.Text = "Enter Name"' 
+        Label6.Text = "Enter Name"
+        ' 
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.BackColor = Color.Transparent
+        Label7.BackColor = Color.WhiteSmoke
         Label7.BorderStyle = BorderStyle.Fixed3D
         Label7.FlatStyle = FlatStyle.Popup
         Label7.Font = New Font("Sitka Banner", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point)
@@ -319,12 +327,14 @@ Partial Class AdminHome
         Label7.Name = "Label7"
         Label7.Size = New Size(175, 41)
         Label7.TabIndex = 30
-        Label7.Text = "Enter Address"' 
+        Label7.Text = "Enter Address"
+        ' 
         ' AdminHome
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
+        BackColor = Color.WhiteSmoke
         BackgroundImage = My.Resources.Resources.light
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1141, 637)

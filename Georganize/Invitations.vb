@@ -5,6 +5,7 @@ Public Class Invitations
     Dim Sqldr As SqlDataReader
 
     Private Sub Invitations_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.DoubleBuffered = True
         SearchByBox.Items.Add("Username")
         SearchByBox.Items.Add("Phone Number")
         SearchByBox.Items.Add("Email ID")

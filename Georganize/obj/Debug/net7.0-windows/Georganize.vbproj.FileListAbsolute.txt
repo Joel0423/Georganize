@@ -198,3 +198,6 @@ C:\Users\Admin\Downloads\Georganize-20230215T143004Z-001-20230303T034701Z-001\Ge
 C:\Users\Admin\Downloads\Georganize-20230215T143004Z-001-20230303T034701Z-001\Georganize-20230215T143004Z-001\Georganize\Georganize\obj\Debug\net7.0-windows\Georganize.AdminHome.resources
 C:\Users\joela\Desktop\Georganize-20230215T143004Z-001\Georganize\Georganize\obj\Debug\net7.0-windows\Georganize.AdminHome.resources
 C:\Users\joela\Desktop\Georganize-20230215T143004Z-001\Georganize\Georganize\obj\Debug\net7.0-windows\Georganize.Invitations.resources
+C:\Users\joela\Desktop\Georganize-20230215T143004Z-001\Georganize\Georganize\obj\Debug\net7.0-windows\Georganize.DiscussionForm.resources
+C:\Users\joela\Desktop\Georganize-20230215T143004Z-001\Georganize\Georganize\obj\Debug\net7.0-windows\Georganize.Dialog1.resources
+C:\Users\joela\Desktop\Georganize-20230215T143004Z-001\Georganize\Georganize\obj\Debug\net7.0-windows\Georganize.EditEventForm.resources

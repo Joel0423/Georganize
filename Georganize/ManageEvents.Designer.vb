@@ -35,6 +35,10 @@ Partial Class ManageEvents
         AgeBox = New TextBox()
         NameBox = New TextBox()
         PictureBox1 = New PictureBox()
+        RemoveUserButton = New Button()
+        Button2 = New Button()
+        TextBox1 = New TextBox()
+        Label5 = New Label()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -42,16 +46,17 @@ Partial Class ManageEvents
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.BackColor = Color.Transparent
+        Label1.BackColor = Color.WhiteSmoke
         Label1.BorderStyle = BorderStyle.Fixed3D
         Label1.FlatStyle = FlatStyle.Popup
         Label1.Font = New Font("SimSun-ExtB", 36F, FontStyle.Bold, GraphicsUnit.Point)
         Label1.ForeColor = Color.Black
-        Label1.Location = New Point(220, 9)
+        Label1.Location = New Point(165, 9)
         Label1.Name = "Label1"
         Label1.Size = New Size(472, 50)
         Label1.TabIndex = 7
-        Label1.Text = "Manage Your Events"' 
+        Label1.Text = "Manage Your Events"
+        ' 
         ' DeleteEventButton
         ' 
         DeleteEventButton.BackColor = Color.Transparent
@@ -80,7 +85,7 @@ Partial Class ManageEvents
         CheckBox1.BackColor = Color.Transparent
         CheckBox1.FlatStyle = FlatStyle.Flat
         CheckBox1.Font = New Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        CheckBox1.Location = New Point(310, 263)
+        CheckBox1.Location = New Point(310, 257)
         CheckBox1.Name = "CheckBox1"
         CheckBox1.Size = New Size(142, 26)
         CheckBox1.TabIndex = 21
@@ -108,15 +113,16 @@ Partial Class ManageEvents
         Label2.Name = "Label2"
         Label2.Size = New Size(129, 26)
         Label2.TabIndex = 23
-        Label2.Text = "Attendees"' 
+        Label2.Text = "Attendees"
+        ' 
         ' Button1
         ' 
-        Button1.BackColor = Color.Transparent
+        Button1.BackColor = Color.WhiteSmoke
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Button1.Location = New Point(570, 389)
+        Button1.Location = New Point(542, 389)
         Button1.Name = "Button1"
-        Button1.Size = New Size(112, 49)
+        Button1.Size = New Size(164, 32)
         Button1.TabIndex = 24
         Button1.Text = "Show User Details"
         Button1.UseVisualStyleBackColor = False
@@ -141,7 +147,8 @@ Partial Class ManageEvents
         Label4.Name = "Label4"
         Label4.Size = New Size(31, 21)
         Label4.TabIndex = 4
-        Label4.Text = "Age"' 
+        Label4.Text = "Age"
+        ' 
         ' Label3
         ' 
         Label3.AutoSize = True
@@ -150,7 +157,8 @@ Partial Class ManageEvents
         Label3.Name = "Label3"
         Label3.Size = New Size(43, 21)
         Label3.TabIndex = 3
-        Label3.Text = "Name"' 
+        Label3.Text = "Name"
+        ' 
         ' AgeBox
         ' 
         AgeBox.Location = New Point(190, 100)
@@ -178,6 +186,54 @@ Partial Class ManageEvents
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
+        ' RemoveUserButton
+        ' 
+        RemoveUserButton.BackColor = Color.WhiteSmoke
+        RemoveUserButton.FlatStyle = FlatStyle.Flat
+        RemoveUserButton.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        RemoveUserButton.Location = New Point(542, 427)
+        RemoveUserButton.Name = "RemoveUserButton"
+        RemoveUserButton.Size = New Size(164, 32)
+        RemoveUserButton.TabIndex = 26
+        RemoveUserButton.Text = "Remove User"
+        RemoveUserButton.UseVisualStyleBackColor = False
+        ' 
+        ' Button2
+        ' 
+        Button2.BackColor = Color.Transparent
+        Button2.FlatStyle = FlatStyle.Flat
+        Button2.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        Button2.Location = New Point(194, 252)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(102, 37)
+        Button2.TabIndex = 27
+        Button2.Text = "Edit"
+        Button2.UseVisualStyleBackColor = False
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(719, 202)
+        TextBox1.Name = "TextBox1"
+        TextBox1.ReadOnly = True
+        TextBox1.Size = New Size(69, 23)
+        TextBox1.TabIndex = 28
+        TextBox1.TextAlign = HorizontalAlignment.Center
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.WhiteSmoke
+        Label5.BorderStyle = BorderStyle.FixedSingle
+        Label5.FlatStyle = FlatStyle.Popup
+        Label5.Font = New Font("Tahoma", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Label5.ForeColor = Color.Black
+        Label5.Location = New Point(719, 169)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(48, 20)
+        Label5.TabIndex = 29
+        Label5.Text = "Total"
+        Label5.TextAlign = ContentAlignment.MiddleCenter
+        ' 
         ' ManageEvents
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -185,6 +241,10 @@ Partial Class ManageEvents
         BackgroundImage = My.Resources.Resources.light1
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(800, 481)
+        Controls.Add(Label5)
+        Controls.Add(TextBox1)
+        Controls.Add(Button2)
+        Controls.Add(RemoveUserButton)
         Controls.Add(Panel1)
         Controls.Add(Button1)
         Controls.Add(Label2)
@@ -193,6 +253,8 @@ Partial Class ManageEvents
         Controls.Add(DeleteEventButton)
         Controls.Add(CreatedEventsList)
         Controls.Add(Label1)
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "ManageEvents"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Manage Events"
@@ -216,4 +278,8 @@ Partial Class ManageEvents
     Friend WithEvents AgeBox As TextBox
     Friend WithEvents NameBox As TextBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents RemoveUserButton As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label5 As Label
 End Class

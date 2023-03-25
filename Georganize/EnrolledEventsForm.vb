@@ -5,6 +5,7 @@ Public Class EnrolledEventsForm
 
 
     Private Sub EnrolledEvents_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.DoubleBuffered = True
         Sqlcmd.Connection = Sqlcon
         Dim evelist As New List(Of String)
 

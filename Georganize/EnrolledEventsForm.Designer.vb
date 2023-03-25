@@ -34,8 +34,9 @@ Partial Class EnrolledEventsForm
         ' 
         ' Label1
         ' 
+        Label1.Anchor = AnchorStyles.Top
         Label1.AutoSize = True
-        Label1.BackColor = Color.Transparent
+        Label1.BackColor = Color.WhiteSmoke
         Label1.BorderStyle = BorderStyle.Fixed3D
         Label1.FlatStyle = FlatStyle.Popup
         Label1.Font = New Font("SimSun-ExtB", 36F, FontStyle.Bold, GraphicsUnit.Point)
@@ -44,9 +45,11 @@ Partial Class EnrolledEventsForm
         Label1.Name = "Label1"
         Label1.Size = New Size(397, 50)
         Label1.TabIndex = 14
-        Label1.Text = "Enrolled Events"' 
+        Label1.Text = "Enrolled Events"
+        ' 
         ' DeleteButton
         ' 
+        DeleteButton.Anchor = AnchorStyles.Bottom
         DeleteButton.BackColor = Color.Transparent
         DeleteButton.FlatStyle = FlatStyle.Flat
         DeleteButton.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
@@ -59,6 +62,7 @@ Partial Class EnrolledEventsForm
         ' 
         ' Button1
         ' 
+        Button1.Anchor = AnchorStyles.Bottom
         Button1.BackColor = Color.Transparent
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
@@ -71,6 +75,7 @@ Partial Class EnrolledEventsForm
         ' 
         ' EnrolledEventsList
         ' 
+        EnrolledEventsList.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom
         EnrolledEventsList.Columns.AddRange(New ColumnHeader() {EventName, EventDate, StartTime, EndTime})
         EnrolledEventsList.FullRowSelect = True
         EnrolledEventsList.Location = New Point(207, 140)
@@ -114,7 +119,7 @@ Partial Class EnrolledEventsForm
         Controls.Add(Label1)
         Name = "EnrolledEventsForm"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "EnrolledEvents"
+        Text = "Enrolled Events"
         ResumeLayout(False)
         PerformLayout()
     End Sub

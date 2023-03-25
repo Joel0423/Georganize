@@ -84,7 +84,7 @@ Public Class SignUpForm
     End Sub
 
     ' Password validation
-    Private Sub PasswordBox1_Validation(sender As Object, e As EventArgs) Handles PasswordBox1.TextChanged, PasswordBox1.LostFocus
+    Private Sub PasswordBox1_Validation(sender As Object, e As EventArgs) Handles PasswordBox1.TextChanged
         Dim password As String = PasswordBox1.Text
 
         If password.Trim = Nothing Then

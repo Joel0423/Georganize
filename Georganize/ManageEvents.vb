@@ -4,6 +4,7 @@ Imports System.Data.SqlClient
 Public Class ManageEvents
     Dim Sqlcmd As New SqlCommand
     Private Sub ManageEvents_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CheckBox1.Enabled = False
         Panel1.Visible = False
         Me.DoubleBuffered = True
         Sqlcmd.Connection = Sqlcon
@@ -26,6 +27,7 @@ Public Class ManageEvents
     End Sub
 
     Private Sub ManageEvents_CLose() Handles MyBase.Closed
+        EditEventForm.Close()
         HomeForm.Show()
     End Sub
 
@@ -47,22 +49,33 @@ Public Class ManageEvents
     End Sub
 
     Private Sub CreatedEventsList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CreatedEventsList.SelectedIndexChanged
-        Panel1.Visible = False
-        AttendeesListBox.Items.Clear()
-        Sqlcmd.Parameters.Clear()
-        Sqlcmd.Parameters.AddWithValue("Ename", CreatedEventsList.SelectedItem.ToString)
-        Dim Sqldr As SqlDataReader
-        Sqlcmd.CommandText = "select username from enrollments,users,events where enrollments.userid=users.userid and events.eventid=enrollments.eventid and events.name=@Ename"
-        Sqldr = Sqlcmd.ExecuteReader
-        If IsDBNull(Sqldr) Then
-            CreatedEventsList.Items.Add("No Enrollments")
+        If CreatedEventsList.SelectedIndex <> -1 Then
+            CheckBox1.Enabled = True
+            DiscussionState()
+
+            Panel1.Visible = False
+            AttendeesListBox.Items.Clear()
+            Sqlcmd.Parameters.Clear()
+            Sqlcmd.Parameters.AddWithValue("Ename", CreatedEventsList.SelectedItem.ToString)
+
+            Dim Sqldr As SqlDataReader
+            Sqlcmd.CommandText = "select username from enrollments,users,events where enrollments.userid=users.userid and events.eventid=enrollments.eventid and events.name=@Ename"
+            Sqldr = Sqlcmd.ExecuteReader
+            If IsDBNull(Sqldr) Then
+                CreatedEventsList.Items.Add("No Enrollments")
+            Else
+                While Sqldr.Read
+                    AttendeesListBox.Items.Add(Sqldr(0))
+                End While
+            End If
+            TextBox1.Text = AttendeesListBox.Items.Count
+            Sqldr.Close()
+            Sqlcmd.Parameters.Clear()
         Else
-            While Sqldr.Read
-                AttendeesListBox.Items.Add(Sqldr(0))
-            End While
+            Panel1.Visible = False
+            AttendeesListBox.Items.Clear()
         End If
-        Sqldr.Close()
-        Sqlcmd.Parameters.Clear()
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -98,5 +111,78 @@ Public Class ManageEvents
             Sqldr.Close()
         End If
 
+    End Sub
+
+    Private Sub DiscussionState()
+        If CreatedEventsList.SelectedIndex <> -1 Then
+            Sqlcmd.Parameters.Clear()
+            Sqlcmd.Parameters.AddWithValue("Ename", CreatedEventsList.SelectedItem.ToString)
+            Sqlcmd.CommandText = "select discussion from events where name=@Ename"
+            If Not IsDBNull(Sqlcmd.ExecuteScalar) Then
+                If Sqlcmd.ExecuteScalar = "yes" Then
+                    CheckBox1.Checked = True
+                Else
+                    CheckBox1.Checked = False
+                End If
+            Else
+                CheckBox1.Checked = False
+            End If
+            Sqlcmd.Parameters.Clear()
+        Else
+            CheckBox1.Enabled = False
+        End If
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.Click
+        Sqlcmd.Parameters.Clear()
+        Sqlcmd.Parameters.AddWithValue("Ename", CreatedEventsList.SelectedItem.ToString)
+        If CheckBox1.Checked Then
+            Sqlcmd.CommandText = "update events set discussion = 'yes' where name =@Ename"
+            Sqlcmd.ExecuteNonQuery()
+
+        Else
+            Sqlcmd.CommandText = "update events set discussion = 'no' where name =@Ename"
+            Sqlcmd.ExecuteNonQuery()
+        End If
+        Sqlcmd.Parameters.Clear()
+    End Sub
+
+    Private Sub RemoveUserButton_Click(sender As Object, e As EventArgs) Handles RemoveUserButton.Click
+        If AttendeesListBox.SelectedIndex <> -1 And CreatedEventsList.SelectedIndex <> -1 Then
+            Sqlcmd.Parameters.Clear()
+            Sqlcmd.Parameters.AddWithValue("loggd", Val(LoggedInUser))
+            Sqlcmd.CommandText = "select username from users where userid=@loggd"
+
+            If AttendeesListBox.SelectedItem.ToString = Sqlcmd.ExecuteScalar Then
+                MessageBox.Show("You cannot remove yourself", "cannot remove attendee", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Else
+                Sqlcmd.Parameters.AddWithValue("selu", AttendeesListBox.SelectedItem.ToString)
+                Sqlcmd.Parameters.AddWithValue("sele", CreatedEventsList.SelectedItem.ToString)
+
+                Sqlcmd.CommandText = "select userid from users where username = @selu"
+                Dim tempuid As Integer = Sqlcmd.ExecuteScalar
+                Sqlcmd.CommandText = "select eventid from events where name = @sele"
+                Dim tempeid As Integer = Sqlcmd.ExecuteScalar
+                Sqlcmd.Parameters.AddWithValue("uid", tempuid)
+                Sqlcmd.Parameters.AddWithValue("eid", tempeid)
+                Sqlcmd.CommandText = "delete from enrollments where userid=@uid and eventid=@eid"
+                Sqlcmd.ExecuteNonQuery()
+                Panel1.Visible = False
+                AttendeesListBox.Items.Remove(AttendeesListBox.SelectedItem)
+            End If
+            Sqlcmd.Parameters.Clear()
+
+        End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If CreatedEventsList.SelectedIndex <> -1 Then
+            Sqlcmd.Parameters.Clear()
+            Sqlcmd.Parameters.AddWithValue("ename", CreatedEventsList.SelectedItem)
+            Sqlcmd.CommandText = "select eventid from events where name=@ename"
+            SelectedPublicEventID = Sqlcmd.ExecuteScalar.ToString
+
+            EditEventForm.Show()
+        End If
     End Sub
 End Class

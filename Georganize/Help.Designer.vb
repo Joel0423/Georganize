@@ -22,54 +22,106 @@ Partial Class Help
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.HelpBox = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.SuspendLayout()
-        '
-        'HelpBox
-        '
-        Me.HelpBox.BackColor = System.Drawing.Color.SeaShell
-        Me.HelpBox.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.HelpBox.Location = New System.Drawing.Point(198, 105)
-        Me.HelpBox.Multiline = True
-        Me.HelpBox.Name = "HelpBox"
-        Me.HelpBox.ReadOnly = True
-        Me.HelpBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.HelpBox.Size = New System.Drawing.Size(420, 269)
-        Me.HelpBox.TabIndex = 1
-        Me.HelpBox.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Label1.Font = New System.Drawing.Font("SimSun-ExtB", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(344, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(122, 50)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Help"
-        '
-        'Help
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.Georganize.My.Resources.Resources.light
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.HelpBox)
-        Me.Name = "Help"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Help"
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
-
+        HelpBox = New TextBox()
+        Label1 = New Label()
+        Label2 = New Label()
+        Label4 = New Label()
+        Label3 = New Label()
+        SuspendLayout()
+        ' 
+        ' HelpBox
+        ' 
+        HelpBox.BackColor = Color.SeaShell
+        HelpBox.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        HelpBox.Location = New Point(199, 82)
+        HelpBox.Multiline = True
+        HelpBox.Name = "HelpBox"
+        HelpBox.ReadOnly = True
+        HelpBox.ScrollBars = ScrollBars.Vertical
+        HelpBox.Size = New Size(420, 269)
+        HelpBox.TabIndex = 1
+        HelpBox.TabStop = False
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.BackColor = Color.WhiteSmoke
+        Label1.BorderStyle = BorderStyle.Fixed3D
+        Label1.FlatStyle = FlatStyle.Popup
+        Label1.Font = New Font("SimSun-ExtB", 36F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.ForeColor = Color.Black
+        Label1.Location = New Point(344, 9)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(122, 50)
+        Label1.TabIndex = 0
+        Label1.Text = "Help"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.BackColor = Color.WhiteSmoke
+        Label2.BorderStyle = BorderStyle.Fixed3D
+        Label2.FlatStyle = FlatStyle.Popup
+        Label2.Font = New Font("SimSun-ExtB", 20.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.ForeColor = Color.Black
+        Label2.Location = New Point(12, 346)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(179, 29)
+        Label2.TabIndex = 2
+        Label2.Text = "Contact Us:"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.BackColor = Color.WhiteSmoke
+        Label4.BorderStyle = BorderStyle.Fixed3D
+        Label4.FlatStyle = FlatStyle.Popup
+        Label4.Font = New Font("SimSun-ExtB", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Label4.ForeColor = Color.Black
+        Label4.Location = New Point(12, 386)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(330, 21)
+        Label4.TabIndex = 4
+        Label4.Text = "Email: helpdesk@georganize.in"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.BackColor = Color.WhiteSmoke
+        Label3.BorderStyle = BorderStyle.Fixed3D
+        Label3.FlatStyle = FlatStyle.Popup
+        Label3.Font = New Font("SimSun-ExtB", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Label3.ForeColor = Color.Black
+        Label3.Location = New Point(12, 420)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(253, 21)
+        Label3.TabIndex = 5
+        Label3.Text = "Phone: +91 80672 18000"
+        ' 
+        ' Help
+        ' 
+        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = My.Resources.Resources.light
+        BackgroundImageLayout = ImageLayout.Stretch
+        ClientSize = New Size(800, 450)
+        Controls.Add(Label3)
+        Controls.Add(Label4)
+        Controls.Add(Label2)
+        Controls.Add(Label1)
+        Controls.Add(HelpBox)
+        MaximizeBox = False
+        MinimizeBox = False
+        Name = "Help"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "Help"
+        ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents HelpBox As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
 End Class

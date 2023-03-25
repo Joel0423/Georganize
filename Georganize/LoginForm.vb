@@ -88,7 +88,7 @@ Public Class LoginForm
         HomeForm.Show()
     End Sub
 
-    Private Sub CloseGeorganize() Handles Me.Closed
+    Private Sub CloseGeorganize() Handles MyBase.Closed
         GeoClose()
     End Sub
 

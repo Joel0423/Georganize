@@ -59,6 +59,7 @@ Partial Class EventCreationForm
         ' 
         ' EventNameBox
         ' 
+        EventNameBox.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         EventNameBox.BackColor = Color.AntiqueWhite
         EventNameBox.Location = New Point(82, 108)
         EventNameBox.MaxLength = 25
@@ -68,6 +69,7 @@ Partial Class EventCreationForm
         ' 
         ' EventAddressBox
         ' 
+        EventAddressBox.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         EventAddressBox.BackColor = Color.AntiqueWhite
         EventAddressBox.Location = New Point(82, 300)
         EventAddressBox.MaxLength = 300
@@ -75,11 +77,13 @@ Partial Class EventCreationForm
         EventAddressBox.Size = New Size(294, 84)
         EventAddressBox.TabIndex = 4
         EventAddressBox.TabStop = False
-        EventAddressBox.Text = ""' 
+        EventAddressBox.Text = ""
+        ' 
         ' BookVenueCheckBox
         ' 
+        BookVenueCheckBox.Anchor = AnchorStyles.Right
         BookVenueCheckBox.AutoSize = True
-        BookVenueCheckBox.BackColor = Color.Transparent
+        BookVenueCheckBox.BackColor = Color.WhiteSmoke
         BookVenueCheckBox.FlatAppearance.BorderColor = Color.Black
         BookVenueCheckBox.Location = New Point(493, 323)
         BookVenueCheckBox.Name = "BookVenueCheckBox"
@@ -90,6 +94,7 @@ Partial Class EventCreationForm
         ' 
         ' VenueComboBox
         ' 
+        VenueComboBox.Anchor = AnchorStyles.Right
         VenueComboBox.BackColor = Color.AntiqueWhite
         VenueComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         VenueComboBox.FormattingEnabled = True
@@ -101,6 +106,7 @@ Partial Class EventCreationForm
         ' 
         ' EventDescriptionBox
         ' 
+        EventDescriptionBox.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         EventDescriptionBox.BackColor = Color.AntiqueWhite
         EventDescriptionBox.BorderStyle = BorderStyle.FixedSingle
         EventDescriptionBox.Location = New Point(82, 165)
@@ -108,29 +114,33 @@ Partial Class EventCreationForm
         EventDescriptionBox.Name = "EventDescriptionBox"
         EventDescriptionBox.Size = New Size(294, 89)
         EventDescriptionBox.TabIndex = 7
-        EventDescriptionBox.Text = ""' 
+        EventDescriptionBox.Text = ""
+        ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.BackColor = Color.Transparent
+        Label1.BackColor = Color.WhiteSmoke
         Label1.BorderStyle = BorderStyle.Fixed3D
         Label1.Location = New Point(82, 88)
         Label1.Name = "Label1"
         Label1.Size = New Size(73, 17)
         Label1.TabIndex = 8
-        Label1.Text = "Event Name"' 
+        Label1.Text = "Event Name"
+        ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.BackColor = Color.Transparent
+        Label2.BackColor = Color.WhiteSmoke
         Label2.BorderStyle = BorderStyle.Fixed3D
         Label2.Location = New Point(82, 147)
         Label2.Name = "Label2"
         Label2.Size = New Size(69, 17)
         Label2.TabIndex = 9
-        Label2.Text = "Description"' 
+        Label2.Text = "Description"
+        ' 
         ' EventModeBox
         ' 
+        EventModeBox.Anchor = AnchorStyles.Right
         EventModeBox.DropDownStyle = ComboBoxStyle.DropDownList
         EventModeBox.FormattingEnabled = True
         EventModeBox.Items.AddRange(New Object() {"In-Person", "Online"})
@@ -141,36 +151,43 @@ Partial Class EventCreationForm
         ' 
         ' Label3
         ' 
+        Label3.Anchor = AnchorStyles.Right
         Label3.AutoSize = True
-        Label3.BackColor = Color.Transparent
+        Label3.BackColor = Color.WhiteSmoke
         Label3.BorderStyle = BorderStyle.FixedSingle
         Label3.Location = New Point(493, 257)
         Label3.Name = "Label3"
         Label3.Size = New Size(72, 17)
         Label3.TabIndex = 11
-        Label3.Text = "Event Mode"' 
+        Label3.Text = "Event Mode"
+        ' 
         ' Label4
         ' 
+        Label4.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         Label4.AutoSize = True
-        Label4.BackColor = Color.Transparent
+        Label4.BackColor = Color.WhiteSmoke
         Label4.BorderStyle = BorderStyle.Fixed3D
         Label4.Location = New Point(82, 280)
         Label4.Name = "Label4"
         Label4.Size = New Size(83, 17)
         Label4.TabIndex = 12
-        Label4.Text = "Event Address"' 
+        Label4.Text = "Event Address"
+        ' 
         ' Label5
         ' 
+        Label5.Anchor = AnchorStyles.Right
         Label5.AutoSize = True
-        Label5.BackColor = Color.Transparent
+        Label5.BackColor = Color.WhiteSmoke
         Label5.BorderStyle = BorderStyle.FixedSingle
         Label5.Location = New Point(493, 88)
         Label5.Name = "Label5"
         Label5.Size = New Size(65, 17)
         Label5.TabIndex = 13
-        Label5.Text = "Event Date"' 
+        Label5.Text = "Event Date"
+        ' 
         ' EventDatePicker
         ' 
+        EventDatePicker.Anchor = AnchorStyles.Right
         EventDatePicker.CustomFormat = ""
         EventDatePicker.Location = New Point(493, 117)
         EventDatePicker.Name = "EventDatePicker"
@@ -179,26 +196,31 @@ Partial Class EventCreationForm
         ' 
         ' Label6
         ' 
+        Label6.Anchor = AnchorStyles.Right
         Label6.AutoSize = True
-        Label6.BackColor = Color.Transparent
+        Label6.BackColor = Color.WhiteSmoke
         Label6.BorderStyle = BorderStyle.FixedSingle
         Label6.Location = New Point(493, 160)
         Label6.Name = "Label6"
         Label6.Size = New Size(62, 17)
         Label6.TabIndex = 15
-        Label6.Text = "Start Time"' 
+        Label6.Text = "Start Time"
+        ' 
         ' Label7
         ' 
+        Label7.Anchor = AnchorStyles.Right
         Label7.AutoSize = True
-        Label7.BackColor = Color.Transparent
+        Label7.BackColor = Color.WhiteSmoke
         Label7.BorderStyle = BorderStyle.FixedSingle
         Label7.Location = New Point(669, 160)
         Label7.Name = "Label7"
         Label7.Size = New Size(58, 17)
         Label7.TabIndex = 16
-        Label7.Text = "End Time"' 
+        Label7.Text = "End Time"
+        ' 
         ' EventStartTimePicker
         ' 
+        EventStartTimePicker.Anchor = AnchorStyles.Right
         EventStartTimePicker.CustomFormat = "  HH      '|'   mm         '|'   ss"
         EventStartTimePicker.Format = DateTimePickerFormat.Custom
         EventStartTimePicker.Location = New Point(493, 178)
@@ -210,6 +232,7 @@ Partial Class EventCreationForm
         ' 
         ' EventEndTimePicker
         ' 
+        EventEndTimePicker.Anchor = AnchorStyles.Right
         EventEndTimePicker.CustomFormat = "  HH      '|'   mm         '|'   ss"
         EventEndTimePicker.Format = DateTimePickerFormat.Custom
         EventEndTimePicker.Location = New Point(669, 178)
@@ -221,6 +244,7 @@ Partial Class EventCreationForm
         ' 
         ' TimeFormatCheckBox
         ' 
+        TimeFormatCheckBox.Anchor = AnchorStyles.Right
         TimeFormatCheckBox.AutoSize = True
         TimeFormatCheckBox.BackColor = Color.Transparent
         TimeFormatCheckBox.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
@@ -234,36 +258,43 @@ Partial Class EventCreationForm
         ' 
         ' Label8
         ' 
+        Label8.Anchor = AnchorStyles.Right
         Label8.AutoSize = True
-        Label8.BackColor = Color.Transparent
+        Label8.BackColor = Color.WhiteSmoke
         Label8.BorderStyle = BorderStyle.FixedSingle
         Label8.Location = New Point(493, 204)
         Label8.Name = "Label8"
         Label8.Size = New Size(146, 17)
         Label8.TabIndex = 21
-        Label8.Text = "Hours | Minutes | Seconds"' 
+        Label8.Text = "Hours | Minutes | Seconds"
+        ' 
         ' Label9
         ' 
+        Label9.Anchor = AnchorStyles.Right
         Label9.AutoSize = True
-        Label9.BackColor = Color.Transparent
+        Label9.BackColor = Color.WhiteSmoke
         Label9.BorderStyle = BorderStyle.FixedSingle
         Label9.Location = New Point(669, 204)
         Label9.Name = "Label9"
         Label9.Size = New Size(146, 17)
         Label9.TabIndex = 22
-        Label9.Text = "Hours | Minutes | Seconds"' 
+        Label9.Text = "Hours | Minutes | Seconds"
+        ' 
         ' Label10
         ' 
+        Label10.Anchor = AnchorStyles.Right
         Label10.AutoSize = True
-        Label10.BackColor = Color.Transparent
+        Label10.BackColor = Color.WhiteSmoke
         Label10.BorderStyle = BorderStyle.FixedSingle
         Label10.Location = New Point(669, 257)
         Label10.Name = "Label10"
         Label10.Size = New Size(85, 17)
         Label10.TabIndex = 23
-        Label10.Text = "Event Visibility"' 
+        Label10.Text = "Event Visibility"
+        ' 
         ' EventVisibilityComboBox
         ' 
+        EventVisibilityComboBox.Anchor = AnchorStyles.Right
         EventVisibilityComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         EventVisibilityComboBox.FormattingEnabled = True
         EventVisibilityComboBox.Items.AddRange(New Object() {"Public", "Private"})
@@ -274,7 +305,8 @@ Partial Class EventCreationForm
         ' 
         ' SubmitButton
         ' 
-        SubmitButton.BackColor = Color.Transparent
+        SubmitButton.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        SubmitButton.BackColor = Color.WhiteSmoke
         SubmitButton.FlatStyle = FlatStyle.Flat
         SubmitButton.Font = New Font("Segoe UI Historic", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
         SubmitButton.Location = New Point(82, 453)
@@ -291,8 +323,9 @@ Partial Class EventCreationForm
         ' 
         ' AgeCheckBox
         ' 
+        AgeCheckBox.Anchor = AnchorStyles.Right
         AgeCheckBox.AutoSize = True
-        AgeCheckBox.BackColor = Color.Transparent
+        AgeCheckBox.BackColor = Color.WhiteSmoke
         AgeCheckBox.FlatAppearance.BorderColor = Color.Red
         AgeCheckBox.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
         AgeCheckBox.ForeColor = SystemColors.ControlText
@@ -305,6 +338,7 @@ Partial Class EventCreationForm
         ' 
         ' AgeBox
         ' 
+        AgeBox.Anchor = AnchorStyles.Right
         AgeBox.BackColor = Color.AntiqueWhite
         AgeBox.Location = New Point(669, 348)
         AgeBox.MaxLength = 2
@@ -317,17 +351,20 @@ Partial Class EventCreationForm
         ' 
         ' Label11
         ' 
+        Label11.Anchor = AnchorStyles.Top
         Label11.AutoSize = True
-        Label11.BackColor = Color.Transparent
+        Label11.BackColor = Color.WhiteSmoke
         Label11.BorderStyle = BorderStyle.Fixed3D
         Label11.Font = New Font("Segoe UI Historic", 18F, FontStyle.Regular, GraphicsUnit.Point)
         Label11.Location = New Point(326, 19)
         Label11.Name = "Label11"
         Label11.Size = New Size(203, 34)
         Label11.TabIndex = 28
-        Label11.Text = "Create new event"' 
+        Label11.Text = "Create new event"
+        ' 
         ' SecretCode
         ' 
+        SecretCode.Anchor = AnchorStyles.Right
         SecretCode.AutoSize = True
         SecretCode.BackColor = Color.Transparent
         SecretCode.BorderStyle = BorderStyle.FixedSingle
@@ -335,7 +372,8 @@ Partial Class EventCreationForm
         SecretCode.Name = "SecretCode"
         SecretCode.Size = New Size(35, 17)
         SecretCode.TabIndex = 29
-        SecretCode.Text = "code"' 
+        SecretCode.Text = "code"
+        ' 
         ' EStart
         ' 
         EStart.Tag = ""
@@ -350,6 +388,7 @@ Partial Class EventCreationForm
         ' 
         ' ListView1
         ' 
+        ListView1.Anchor = AnchorStyles.Right
         ListView1.Columns.AddRange(New ColumnHeader() {EStart, EEnd})
         ListView1.Location = New Point(613, 402)
         ListView1.Name = "ListView1"
@@ -361,20 +400,23 @@ Partial Class EventCreationForm
         ' 
         ' Label12
         ' 
+        Label12.Anchor = AnchorStyles.Right
         Label12.AutoSize = True
-        Label12.BackColor = Color.Transparent
+        Label12.BackColor = Color.WhiteSmoke
         Label12.BorderStyle = BorderStyle.FixedSingle
         Label12.Location = New Point(613, 382)
         Label12.Name = "Label12"
         Label12.Size = New Size(162, 17)
         Label12.TabIndex = 32
-        Label12.Text = "Booked timings at this venue"' 
+        Label12.Text = "Booked timings at this venue"
+        ' 
         ' EventCreationForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
         BackgroundImage = My.Resources.Resources.MSign3
+        BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(884, 511)
         Controls.Add(Label12)
         Controls.Add(ListView1)
@@ -405,7 +447,7 @@ Partial Class EventCreationForm
         Controls.Add(EventAddressBox)
         Controls.Add(EventNameBox)
         DoubleBuffered = True
-        MaximumSize = New Size(1300, 700)
+        MaximizeBox = False
         MinimumSize = New Size(800, 500)
         Name = "EventCreationForm"
         StartPosition = FormStartPosition.CenterScreen
